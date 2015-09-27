@@ -1,0 +1,31 @@
+/*imported forms*/
+
+
+@font-face{
+font-family:'Cubano-regular-webfont';
+src:url('../fonts/Cubano-regular-webfont.eot');
+}
+
+@font-face{
+font-family:'Cubano-regular-webfont';
+src:url('../fonts/Cubano-regular-webfont.svg');
+}
+
+@font-face{
+font-family:'Roboto-Light';
+src:url('../fonts/Roboto-Light.ttf');
+}
+
+body{
+	font-family: helvetica,arial,sans-serif;
+}
+.property-listing{
+	
+	
+	margin-bottom: 30%;
+}
+
+.navbar{
+	font-family: 'Cubano-regular-webfont',helvetica,arial,sans-serif;
+}
+
