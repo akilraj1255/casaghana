@@ -20,8 +20,8 @@ body{
 	font-family: helvetica,arial,sans-serif;
 }
 .property-listing{
-	
-	
+
+
 	margin-bottom: 30%;
 }
 
@@ -31,6 +31,12 @@ body{
 
 
 .login-form{
-	
+
 	margin:20% auto;
+}
+
+.search{
+	padding: 1%;
+	align-self: center;
+	margin-left: 2%;
 }

@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="col-md-4">
 			<div class="thumbnail">
-					<img src="..." class="img-responsive">
+					 <img class="img-responsive" src="images/no-thumbnail.png" />
 				<div class="caption">
 					<h3 class="page-header"></h3>
 				</div>
@@ -12,7 +12,7 @@
 		</div><!--end of thumbnail-->
 		<div class="col-md-4">
 			<div class="thumbnail">
-					<img src="..." class="img-responsive">
+					 <img class="img-responsive" src="images/no-thumbnail.png" />
 				<div class="caption">
 					<h3 class="page-header"></h3>
 				
@@ -21,7 +21,7 @@
 		</div><!--end of thumbnail-->
 		<div class="col-md-4">
 				<div class="thumbnail">
-						<img src="..." class="img-responsive">
+						 <img class="img-responsive" src="images/no-thumbnail.png" />
 					<div class="caption">
 						<h3 class="page-header"></h3>
 					</div>

@@ -6,7 +6,7 @@
 		 <link href="css/bootstrap.min.css" rel="stylesheet">
 	</head>
 <body>
-	
+
 	<div class="container">
 		<div class="login-form col-sm-12 col-md-4 col-md-offset-4">
 
@@ -14,7 +14,7 @@
 					<div class="form-group">
 						<input type="text" name="email" class="form-control">
 
-					</div>	 
+					</div>
 
 
 
@@ -31,12 +31,12 @@
 
 		</div>
 	</div>
-		
-		
-	  
-	
-	
-	
+
+
+
+
+
+
 	</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
