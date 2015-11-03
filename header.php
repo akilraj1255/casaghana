@@ -7,10 +7,9 @@
 	</head>
 <body>
 <?php include('functions.php');
-	include 'dbconnect.php';
 	casa_setup();
-	
 	casa_tables();
+		include 'dbconnect.php';
 	?>
 	<div class="navbar navbar-default">
 		<div class="container-fluid">
@@ -27,8 +26,8 @@
 				</button>
 			</div>
 
-			<div class="collapse navbar-collapse pull-right ">
-					<ul class="nav navbar-nav text-center col-sm-4 col-md-12">
+			<div class="collapse navbar-collapse col-md-12 text-center ">
+					<ul class="nav navbar-nav">
 						<li><a href="index">Home</a></li>
 						<li><a href="property">Properties</a></li>
 						<li><a href="">About</a></li>
