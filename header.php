@@ -4,6 +4,8 @@
 		<title>Casa Ghana</title>
 		<link href="css/style.css" rel="stylesheet">
 		 <link href="css/bootstrap.min.css" rel="stylesheet">
+		 <!-- including font awesome into the project -->
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	</head>
 <body>
 <?php include('functions.php');
