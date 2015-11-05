@@ -4,6 +4,9 @@
 		<title>Casa Ghana</title>
 		<link href="css/style.css" rel="stylesheet">
 		 <link href="css/bootstrap.min.css" rel="stylesheet">
+		 <!-- including font awesome into the project -->
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
 	</head>
 <body>
 	<?php include('functions.php');
@@ -28,12 +31,14 @@
 
 
 					<div class="form-group">
-						<button class="btn btn-primary">Login</button>
+						<button class="btn btn-primary"><i class="fa fa-sign-in"></i> Login</button>
 					</div>
 
-
-			<p><a href="">Lost Password</a></p>
-			<p><a href="index">Front Door</a></p>
+					<p><ul class="list-inline">
+						<li>	<a href="register"><i class="fa fa-sign-in"></i>Open Account</a></li>
+						<li><a href=""><i class="fa fa-question"></i>Lost Password</a></li>
+						<li><a href="index"><i class="fa fa-home"></i>Front Door</a></li></ul>
+				</p>
 		</form>
 
 		</div>
@@ -50,7 +55,7 @@
   <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script  src="js/custom.js"></script>
+  <script  src="js/custom.js"></script>
 
 		</body>
 		</html>

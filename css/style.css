@@ -27,6 +27,12 @@ body{
 
 .navbar{
 	font-family: 'Cubano-regular-webfont',helvetica,arial,sans-serif;
+	background: #927499;
+}
+
+.navbar a{
+	color: #fafafa;
+
 }
 
 
@@ -39,4 +45,30 @@ body{
 	padding: 1%;
 	align-self: center;
 	margin-left: 2%;
+}
+
+
+a{
+	color:#000000;
+}
+
+
+.navbar-brand{
+	color:#fafafa;
+	font-size:bolder;
+	font-family: 'Monospace';
+}
+
+.nav li:hover, .nav li:focus {
+	background: #fafafa;
+	color: #927499;
+}
+
+.nav li > a:hover{
+	color: #927499;
+	background: #000;
+}
+
+.icon-bar{
+	background: #fafafa;
 }

@@ -6,6 +6,7 @@
 		 <link href="css/bootstrap.min.css" rel="stylesheet">
 		 <!-- including font awesome into the project -->
 		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
 	</head>
 <body>
 <?php include('functions.php');
@@ -13,7 +14,7 @@
 	casa_tables();
 		include 'dbconnect.php';
 	?>
-	<div class="navbar navbar-default">
+	<div class="navbar ">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<div class="navbar-brand"> Casa Ghana </div>
