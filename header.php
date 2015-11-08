@@ -16,6 +16,7 @@
 		include 'session.php';
 				include 'session-expire.php';
 				member();
+			logout_modal();
 
 	?>
 	<div class="navbar ">
@@ -36,17 +37,19 @@
 			<div class="collapse navbar-collapse col-md-12 text-center ">
 					<ul class="nav navbar-nav">
 						<li><a href="index">Home</a></li>
-						<li><a href="property">Properties</a></li>
+						<!-- <li><a href="property">Properties</a></li>
 						<li><a href="">About</a></li>
-						<li><a href="">Contact</a></li>
+						<li><a href="">Contact</a></li> -->
 						<?php if(!isset($user)) :?>
 							<li><a href="login">Login</a></li>
 							<li><a href="register">Register</a></li>
 						<?php else: ?>
-							<li><a href="logout">logout</a></li>
+
+							<li><a href="member"> <i class="fa fa-user"></i>&nbsp; <?php echo $row['first_name'] ?> </a></li>
+								<li class=""><a data-toggle="modal" data-target="#logout" href="#"><i class="fa fa-sign-in"></i>&nbsp;logout</a></li>
 						<?php endif; ?>
-						<li><a href="member"> <i class="fa fa-user"></i> <?php echo $row['first_name'] ?> </a></li>
-						<li><a href="#" class="my-search">search</a></li>
+
+						<li><a href="#" class="my-search"><i class="fa fa-search"></i>&nbsp;search</a></li>
 					</ul>
 
 			</div>

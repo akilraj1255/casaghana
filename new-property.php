@@ -5,13 +5,18 @@
 <div class="container">
 
   <div class="col-md-offset-3 col-md-6">
+
     <ul class="breadcrumb text-center">
-      <li>  <a href="new-property"  >List New Property</a></li>
-      <li><a href=""  >View My Properties</a></li>
-      <li><a href="member"  >Update My Profile</a></li>
+      <li>  <a href="new-property" ><i class="fa fa-bars"></i>&nbsp;List New Property</a></li>
+      <li><a href="user-listing"  ><i class="fa fa-bars"></i>&nbsp;View My Properties</a></li>
+      <li><a href="member"  ><i class="fa fa-bars"></i>&nbsp;Update My Profile</a></li>
     </ul>
 
-      <form class="form-horizontal" role="form" action="" method="">
+    <div class="alert my-alert">
+        <?php new_listing(); ?>
+    </div>
+
+      <form class="form-horizontal" role="form" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
             <div class="form-group">
               <label for="name">Posting As?</label>
               <input type="text" name="name" value="<?php echo $row['first_name'] ?>" placeholder="Posting As?" class="form-control">
@@ -33,16 +38,16 @@
               <input type="text" name="location" value="" placeholder="Select a location fro your property" class="form-control">
             </div>
             <div class="form-group">
-              <label for="contact">Property Value</label>
+              <label for="price">Property Value</label>
               <input type="text" name="price" value="" placeholder="From $" class="form-control">
             </div>
             <div class="form-group">
               <label for="description">Give some details</label>
-              <textarea name="desctiption" rows="8" cols="40" class="form-control"></textarea>
+              <textarea name="description" rows="8" cols="40" class="form-control"></textarea>
             </div>
 
             <div class="form-group">
-              <button type="submit" name="button" class="btn btn-block btn-primary"><i class="fa fa-plane"></i>&nbsp;Fire Up</button>
+              <button type="submit" name="button" class="btn btn-block btn-primary"><i class="fa fa-paper-plane"></i>&nbsp;Fire Up</button>
             </div>
       </form>
     </div>

@@ -68,3 +68,8 @@ a{
 .icon-bar{
 	background: #fafafa;
 }
+
+.my-alert p{
+	padding: 3%;
+	border-radius: 8px;
+}

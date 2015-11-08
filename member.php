@@ -8,9 +8,9 @@
   <div class="col-md-offset-3 col-md-6">
 
     <ul class="breadcrumb text-center">
-      <li>  <a href="new-property"  >List New Property</a></li>
-      <li><a href=""  >View My Properties</a></li>
-      <li><a href="member"  >Update My Profile</a></li>
+      <li>  <a href="new-property" ><i class="fa fa-bars"></i>&nbsp;List New Property</a></li>
+      <li><a href="user-listing"  ><i class="fa fa-bars"></i>&nbsp;View My Properties</a></li>
+      <li><a href="member"  ><i class="fa fa-bars"></i>&nbsp;Update My Profile</a></li>
     </ul>
     <h3 class="page-header text-info">Update My Profile</h3>
       <form class="form-horizontal" role="form" id="member-profile" action="" method="">

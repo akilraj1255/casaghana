@@ -40,6 +40,7 @@ $users="CREATE TABLE IF NOT EXISTS `users` (
 
 $properties="create table if not exists `properties`(
    `property_id` varchar(64) NOT NULL,
+   `owner` varchar(64) NOT NULL,
    `email` varchar(256) NOT NULL,
    `title` varchar(256) NOT NULL,
    `property_type` varchar(256) NOT NULL,
@@ -100,8 +101,8 @@ $fetch=mysqli_fetch_array($result);
 	$_SESSION['userid']=$email;
 	@$_SESSION['expire'] = time()+5*60;
 
-		echo '<p class="alert alert-success text-center">Welcome &nbsp;'.$first_name .'&nbsp; '.$last_name.' <span class="close pull-right"> <a href="#" >&times;</span></p>';
-				header("location:index");}else{echo '<p class="alert alert-danger text-center">Wrong Email / Password! <span class="close pull-right"> <a href="#" >&times;</span></p>';}
+		echo '<p class="alert alert-success text-center">Welcome &nbsp;'.$first_name .'&nbsp; '.$last_name.' <span class="close pull-right"> <a href="#" >&times;</a></span></p>';
+				header("location:index");}else{echo '<p class="alert alert-danger text-center">Wrong Email / Password! <span class="close pull-right"> <a href="#" >&times;</a></span></p>';}
 
 	mysqli_close($dbc);
 	};
@@ -121,7 +122,7 @@ function newMember(){
  $confirm_code=md5(uniqid(rand()));
  $user_id=md5(rand(0,10000));
  //new block added
- if($fname=="" or $lname=="" or $email=="" || $password=="" || $confemail==""  ){echo '<p class="alert alert-danger text-center">Please Make Sure All Fields Are Filled <span class="close pull-right"> <a href="#" >&times;</span></p>';}
+ if($fname=="" or $lname=="" or $email=="" || $password=="" || $confemail==""  ){echo '<p class="alert alert-danger text-center">Please Make Sure All Fields Are Filled <span class="close pull-right"><span class="close pull-right"> <a href="#" >&times;</a></span></p>';}
 
  elseif($email==$confemail){
    $query="select * from users where email='$email'";
@@ -129,7 +130,7 @@ function newMember(){
 
    if(mysqli_num_rows($result)==1){
 
-     echo '<p class="alert alert-danger text-center">We already have someone with that email <span class="close pull-right"> <a href="#" >&times;</span></p>';
+     echo '<p class="alert alert-danger text-center">We already have someone with that email <span class="close pull-right"><span class="close pull-right"> <a href="#" >&times;</a></span></p>';
    }elseif(mysqli_num_rows($result)==0){
  $query="insert into users(first_name,last_name,email,password,confirm_code,user_id)
        values('$fname','$lname','$email','$password','$confirm_code','$user_id')";
@@ -158,9 +159,9 @@ function newMember(){
        //sending the mail
        $sentmail=mail($to,$subject,$message,$header);
        echo '<p class="alert alert-success center-block"> Your Account is ready.Please Click the confirmation link we sent you and
-  Just <span class="link"><a href="signin" >Sign In</a></span> <span class="close pull-right"> <a href="#"> X </span></p>';
+  Just <span class="link"><a href="signin" >Sign In</a></span> <span class="close pull-right"> <a href="#"> X </a></span></p>';
 
-}else{echo '<p class="alert alert-danger text-center">Something is not right <span class="pull-right close"> <a href="#" >&times;</span></p>';}
+}else{echo '<p class="alert alert-danger text-center">Something is not right <span class="pull-right close"> <a href="#" >&times;</a></span></p>';}
 
 
        mysqli_close($dbc);
@@ -238,4 +239,87 @@ function property_type(){
       <a href="property?category='.$category.'"><span class="glyphicon glyphicon-circle-arrow-right"></span>&nbsp;'.$row['type_name'].'</a> </li>
   ';
   }
+}
+//posting new property
+function new_listing(){
+  if($_POST){
+      include 'dbconnect.php';
+  $name=mysqli_escape_string($dbc,$_POST['name']);
+  $email=mysqli_escape_string($dbc,$_POST['email']);
+  $contact=mysqli_escape_string($dbc,$_POST['contact']);
+  $title=mysqli_escape_string($dbc,$_POST['title']);
+  $location=mysqli_escape_string($dbc,$_POST['location']);
+  $price=mysqli_escape_string($dbc,$_POST['price']);
+  $description=mysqli_escape_string($dbc,$_POST['description']);
+  $listid=uniqid(rand(0,10000));
+
+  $query="select * from properties where email='$email'";
+  $result=mysqli_query($dbc,$query);
+  $row=mysqli_num_rows($result);
+  if($row!=1){
+    $query="insert into properties(owner,email,contact,title,location,
+    price,description,property_id) values('$name','$email','$contact',
+    '$title','$location','$price','$description','$listid')";
+
+    $result=mysqli_query($dbc,$query);
+
+    echo '<p class="bg-success">Property Listing Successful</p>';
+  }else{
+    echo '<p class="bg-danger">My bad!!! Something went totally wrong. Try again later while i try to fix it <span class="close pull-right"> <span class="close pull-right"> <a href="#" >&times; </a></span></p>';
+  }
+}
+
+};
+
+
+//listing user classifieds
+function user_listings(){
+include 'dbconnect.php';
+@include 'session.php';
+$query="select * from properties where email='$user'";
+$result=mysqli_query($dbc,$query);
+$row=mysqli_fetch_array($result);
+
+
+echo '<div class="col-md-4 thumbnail">
+  <img class="img-responsive" src="images/no-thumbnail.png" />
+</div>
+
+ <div class=" col-sm-4 col-md-8">
+ <ul class="">
+  <li><a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></li>
+   <li>'.$row['location'].'</li>
+   <li>'.$row['price'].' $</li>
+   <li>'.$row['contact'].'</li>
+   <li>'.$row['email'].'</li>
+   <li>
+     <ul class="list-inline">
+       <li class=""><a href="#">Size</a></li>
+       <li class=""><a href="#">Garage size</a></li>
+       <li class=""><a href="#">2 Bedrooms</a></li>
+     </ul>
+
+     <ul class="list-inline">
+     <li class="">Open from 6am - 8pm for viewing</li>
+
+     </ul>
+
+   </li>
+ </ul>
+ </div>
+
+ <div class=" col-sm-4 col-md-12">
+    <ul class="list-inline">
+     <li class="pull-left">
+       <span class="glyphicon glyphicon-hourglass"></span>&nbsp;
+       Property Status
+      </li>
+     <li class="pull-right">
+         <a href="view-listing" class="btn btn-primary">
+           <span class=" glyphicon glyphicon-eye-open"> </span>&nbsp;View Listing
+         </a>
+     </li>
+    </ul>
+ </div>
+</div>';
 }

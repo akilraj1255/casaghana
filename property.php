@@ -2,44 +2,121 @@
 
 <div class="row">
 	<div class="container">
-		<div class="col-md-4">
-			<div class="thumbnail">
-					 <img class="img-responsive" src="images/no-thumbnail.png" />
-				<div class="caption">
-					<h3 class="page-header"></h3>
-					<p>Tad-kaer nadoz sec'hed. Fazi tog tec'hout giz mel Mor Bihan sal-degemer. Daou 
-						war-raok mab c'hwec'hvet, ehan eta marennañ, servijañ seul daoudroad naontek, 
-						jiletenn piv nevez, da gentañ menoz digarez biz-bihan tri kemener c'hwi hir 
-						kaeraat sal-degemer, c'hwezek vi tad-kozh, saout a-walc'h bag lunedoù. Ni yen 
-						ober e venoz, fri dra bras kelenner, bern anavezout oan c'hwezhañ e fri mor 
-						ouzhpenn feiz penaos kement ha dont. Glav voulouz nav gouiziek, prenañ aes 
-						tiegezh hol doñv rak e treuziñ ken kilpenn, froud skrabañ loa treuziñ. Giz korf 
-						pe Groe mui Gwengamp lenn kaier goustad neuze, formaj eil gouzout, lestr nag vi 
-						brozh tad-kozh tad ni hi bagad fresk klañv, aer Pask Nedeleg ober e venoz, kazh 
-						piz bihañ nav degouezhout kav debriñ tal e devezh lec'h all. Roazhon aer daou 
-						horolaj, mor poultrenn e kreisteiz, re ledan tachenn-c'hoari, liv adaozañ 
-						hanter-kant.</p>
-				</div>
-			</div>
-		</div><!--end of thumbnail-->
-		<div class="col-md-4">
-			<div class="thumbnail">
-					 <img class="img-responsive" src="images/no-thumbnail.png" />
-				<div class="caption">
-					<h3 class="page-header"></h3>
-				
-				</div>
-			</div>
-		</div><!--end of thumbnail-->
-		<div class="col-md-4">
-				<div class="thumbnail">
-						 <img class="img-responsive" src="images/no-thumbnail.png" />
-					<div class="caption">
-						<h3 class="page-header"></h3>
+	<div class="col-md-4">
+
+		<div class="col-sm-4 col-md-12">
+			<div  class=" panel panel-default">
+
+				<div class="panel-heading">
+						<div class="panel-title">
+							Property Type
+						</div>
 					</div>
-				</div>
-			</div><!--end of thumbnail-->
+				 <ul class="list-group">
+					 		<?php property_type(); ?>
+		  		</ul>
+			</div>
 		</div>
+
+	</div>
+<!--  end of sidebar-->
+
+	<div class="col-sm-4 col-md-8">
+		<div  class=" panel panel-default">
+
+					<div class="panel-heading">
+						<div class="panel-title">
+							Property listings
+						</div>
+					</div>
+		<div class="panel-body">
+				<div class="property-listing col-sm-4 col-md-12">
+					 <div class="col-md-4 thumbnail">
+					   <img class="img-responsive" src="images/no-thumbnail.png" />
+					 </div>
+
+					  <div class=" col-sm-4 col-md-8">
+						<ul class="">
+							<li>Location</li>
+							<li>Price</li>
+							<li>
+								<ul class="list-inline">
+									<li class=""><a href="#">Size</a></li>
+									<li class=""><a href="#">Garage size</a></li>
+									<li class=""><a href="#">2 Bedrooms</a></li>
+								</ul>
+
+								<ul class="list-inline">
+								<li class="">Open from 6am - 8pm for viewing</li>
+
+								</ul>
+
+							</li>
+						</ul>
+					  </div>
+
+						<div class=" col-sm-4 col-md-12">
+						   <ul class="list-inline">
+								<li class="pull-left">
+									<span class="glyphicon glyphicon-hourglass"></span>&nbsp;
+									Property Status
+							   </li>
+								<li class="pull-right">
+										<a href="view-listing" class="btn btn-primary">
+											<span class=" glyphicon glyphicon-eye-open"> </span>&nbsp;View Listing
+										</a>
+								</li>
+						   </ul>
+						</div>
+				</div>
+				<!--end of listing-->
+				<div class="property-listing col-md-12">
+					 <div class="col-sm-4 col-md-4 thumbnail">
+						 <img class="img-responsive" src="images/no-thumbnail.png" />
+					 </div>
+
+					  <div class=" col-sm-4 col-md-8">
+							<ul class="">
+								<li>Location</li>
+								<li>Price</li>
+								<li>
+									<ul class="list-inline">
+										<li class=""><a href="#">Size</a></li>
+										<li class=""><a href="#">Garage size</a></li>
+										<li class=""><a href="#">2 Bedrooms</a></li>
+									</ul>
+
+									<ul class="list-inline">
+									<li class="">Open from 6am - 8pm for viewing</li>
+
+									</ul>
+
+								</li>
+							</ul>
+					  </div>
+
+						<div class=" col-sm-4 col-md-12">
+						   <ul class="list-inline">
+								<li class="pull-left">
+									<span class="glyphicon glyphicon-hourglass"></span>&nbsp;
+									Property Status
+							   </li>
+									<li class="pull-right">
+										<a href="view-listing" class="btn btn-primary">
+											<span class=" glyphicon glyphicon-eye-open"> </span>&nbsp;View Listing
+										</a>
+								</li>
+							</ul>
+						</div>
+				</div>
+				</div>
+			</div>
+		<!--end of listing-->
+		</div>
+
+<!--end of container-->
+	</div>
+<!--	row ending-->
 </div>
 
 
