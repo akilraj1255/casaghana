@@ -83,24 +83,23 @@
 					 </div>
 
 					  <div class=" col-sm-4 col-md-8">
-						<ul class="">
-							<li>Location</li>
-							<li>Price</li>
-							<li>
-								<ul class="list-inline">
-									<li>Size</li>
-									<li>Garage Space</li>
-									<li>Bed rooms</li>
-									<li>Garage Space</li>
-								</ul>
+							<ul class="">
+								<li>Location</li>
+								<li>Price</li>
+								<li>
+									<ul class="list-inline">
+										<li class=""><a href="#">Size</a></li>
+										<li class=""><a href="#">Garage size</a></li>
+										<li class=""><a href="#">2 Bedrooms</a></li>
+									</ul>
 
-								<ul class="list-inline">
-									<li>Opening  Hours</li>
+									<ul class="list-inline">
+									<li class="">Open from 6am - 8pm for viewing</li>
 
-								</ul>
+									</ul>
 
-							</li>
-						</ul>
+								</li>
+							</ul>
 					  </div>
 
 						<div class=" col-sm-4 col-md-12">

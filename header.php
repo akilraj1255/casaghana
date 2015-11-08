@@ -13,6 +13,10 @@
 	casa_setup();
 	casa_tables();
 		include 'dbconnect.php';
+		include 'session.php';
+				include 'session-expire.php';
+				member();
+
 	?>
 	<div class="navbar ">
 		<div class="container-fluid">
@@ -35,8 +39,14 @@
 						<li><a href="property">Properties</a></li>
 						<li><a href="">About</a></li>
 						<li><a href="">Contact</a></li>
-						<li><a href="login">Login</a></li>
-						<li><a href="register">Register</a></li>
+						<?php if(!isset($user)) :?>
+							<li><a href="login">Login</a></li>
+							<li><a href="register">Register</a></li>
+						<?php else: ?>
+							<li><a href="logout">logout</a></li>
+						<?php endif; ?>
+						<li><a href="member"> <i class="fa fa-user"></i> <?php echo $row['first_name'] ?> </a></li>
+						<li><a href="#" class="my-search">search</a></li>
 					</ul>
 
 			</div>

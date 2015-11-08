@@ -10,9 +10,15 @@ $(document).ready(function(){
 		$('.signup-btn').click(function(){
 			$('#get-started').slideToggle('slow');
 			$('#recent-classifieds').slideToggle('slow');
-			
+
 
 
 		});
 	});
 
+
+	$('.search').hide();
+	$('.my-search').click(function(){
+ 			$('.search').slideDown('slow');
+
+	});

@@ -9,9 +9,13 @@
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 	</head>
 <body>
-	<?php include('functions.php');
-			include 'dbconnect.php';
+	<?php
+	include 'dbconnect.php';
+	 include('functions.php');
+		include 'session.php';
+		include 'session-expire.php';
 			login();
+
 		?>
 	<div class="container">
 		<div class="login-form col-sm-12 col-md-4 col-md-offset-4">

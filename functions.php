@@ -9,6 +9,7 @@ function casa_setup(){
  $result=mysqli_query($dbc,$query);
 }
 
+
 //storing db after creation of database
 
 
@@ -158,3 +159,12 @@ function newMember(){
 
 
 };
+
+//function user profile
+function member(){
+ include 'dbconnect.php';
+ $query ="select * from users";
+ $result=mysqli_query($dbc,$query);
+ $fetch=mysqli_fetch_row($result);
+
+}
