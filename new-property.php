@@ -1,5 +1,7 @@
 <?php include 'header.php' ?>
-
+<?php if(!isset($user)){
+  header("location:index");
+} ?>
 <div class="container">
 
   <div class="col-md-offset-3 col-md-6">
@@ -11,24 +13,31 @@
 
       <form class="form-horizontal" role="form" action="" method="">
             <div class="form-group">
-              <input type="text" name="name" value="" placeholder="Posting As?" class="form-control">
+              <label for="name">Posting As?</label>
+              <input type="text" name="name" value="<?php echo $row['first_name'] ?>" placeholder="Posting As?" class="form-control">
             </div>
             <div class="form-group">
-              <input type="email" name="email" value="" placeholder="your contact email" class="form-control">
+              <label for="email"> Email</label>
+              <input type="email" name="email" value="<?php echo $row['email'] ?>" placeholder="your contact email" class="form-control">
             </div>
             <div class="form-group">
-              <input type="contact" name="contact" value="" placeholder="Your contact number" class="form-control">
+              <label for="contact">Contact</label>
+              <input type="contact" name="contact" value="<?php echo $row['contact'] ?>" placeholder="Your contact number" class="form-control">
             </div>
             <div class="form-group">
+              <label for="title">Name  Listing</label>
               <input type="text" name="title" value="" placeholder="Give me a title" class="form-control">
             </div>
             <div class="form-group">
-              <input type="location" name="name" value="" placeholder="Select a location fro your property" class="form-control">
+              <label for="location"> Property Location</label>
+              <input type="text" name="location" value="" placeholder="Select a location fro your property" class="form-control">
             </div>
             <div class="form-group">
-              <input type="Price" name="name" value="" placeholder="From $" class="form-control">
+              <label for="contact">Property Value</label>
+              <input type="text" name="price" value="" placeholder="From $" class="form-control">
             </div>
             <div class="form-group">
+              <label for="description">Give some details</label>
               <textarea name="desctiption" rows="8" cols="40" class="form-control"></textarea>
             </div>
 

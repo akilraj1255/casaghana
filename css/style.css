@@ -1,10 +1,6 @@
 /*imported forms*/
 
 
-@font-face{
-font-family:'Cubano-regular-webfont';
-src:url('../fonts/Cubano-regular-webfont.eot');
-}
 
 @font-face{
 font-family:'Cubano-regular-webfont';
@@ -17,7 +13,7 @@ src:url('../fonts/Roboto-Light.ttf');
 }
 
 body{
-	font-family: helvetica,arial,sans-serif;
+	font-family: 'Roboto-Light',helvetica,arial,sans-serif;
 }
 .property-listing{
 

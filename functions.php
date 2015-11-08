@@ -59,14 +59,26 @@ $locations="create table if not exists `locations`(
 )";
 
 $proptype="create table if not exists `property_type`(
-`type_id` varchar(256) not null,
+
 `type_name` varchar(256) not null,
-  PRIMARY KEY (`type_id`)
+  PRIMARY KEY (`type_name`)
 )";
+
+ $property_id=md5(rand(0,10000));
+$insertCheck="select * from property_type";
+$check=mysqli_query($dbc,$insertCheck);
+$check_result=mysqli_num_rows($check);
+if($check_result==0){
+$insertPropType= "insert into property_type  values('single house'),('family house'),
+('villa'),('appartment')";
+  $insertproptype=mysqli_query($dbc,$insertPropType);
+};
+
 	 $userresult=mysqli_query($dbc,$users);
    $propresult=mysqli_query($dbc,$properties);
    $typeresult=mysqli_query($dbc,$proptype);
    $locationresult=mysqli_query($dbc,$locations);
+
 };
 
 //login function
@@ -165,6 +177,65 @@ function member(){
  include 'dbconnect.php';
  $query ="select * from users";
  $result=mysqli_query($dbc,$query);
- $fetch=mysqli_fetch_row($result);
+ $fetch=mysqli_fetch_array($result);
 
+}
+
+
+//function popover
+function logout_modal(){
+?>
+
+<!-- modal beginning -->
+<div class="modal  fade" data-backdrop="static" id="logout" tab-index="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+    <!-- modal header -->
+    <div class="modal-header">
+  <button type="btn" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+  <h4 class="modal-title" id="modalLabel">Saying Goodbye?</h4></div>
+    <!-- modal body -->
+
+    <div class="modal-body">
+   you are saying goodbye for today. Do you wish to logout?
+
+    </div>
+
+    <!-- modal footer -->
+
+    <div class="modal-footer">
+
+    <button class="btn" type="button" data-dismiss="modal">Close </button>
+
+    <a href="logout" class="btn btn-danger "  value="Logout" name="discard" >Logout</a>
+
+    </div>
+
+    </div>
+
+
+
+
+  </div>
+
+</div><!-- end of modal -->
+<?php
+
+}
+
+//function for sidebar properties
+function property_type(){
+  include 'dbconnect.php';
+  $query="select * from property_type";
+  $result=mysqli_query($dbc,$query);
+
+
+  while($row=mysqli_fetch_array($result)){
+    $category=$row['type_name'];
+    echo'
+    <li class="list-group-item ">
+      <a href="property?category='.$category.'"><span class="glyphicon glyphicon-circle-arrow-right"></span>&nbsp;'.$row['type_name'].'</a> </li>
+  ';
+  }
 }
