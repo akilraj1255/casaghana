@@ -21,98 +21,19 @@
 	</div>
 <!--  end of sidebar-->
 
-	<div class="col-sm-4 col-md-8">
+	<div class="col-sm-4 col-md-8 property-listing">
 		<div  class=" panel panel-default">
 
 					<div class="panel-heading">
 						<div class="panel-title">
-							Property listings
+						Latest Property Listings
 						</div>
 					</div>
 		<div class="panel-body">
-				<div class="property-listing col-sm-4 col-md-12">
-					 <div class="col-md-4 thumbnail">
-					   <img class="img-responsive" src="images/no-thumbnail.png" />
-					 </div>
-
-					  <div class=" col-sm-4 col-md-8">
-						<ul class="">
-							<li>Location</li>
-							<li>Price</li>
-							<li>
-								<ul class="list-inline">
-									<li class=""><a href="#">Size</a></li>
-									<li class=""><a href="#">Garage size</a></li>
-									<li class=""><a href="#">2 Bedrooms</a></li>
-								</ul>
-
-								<ul class="list-inline">
-								<li class="">Open from 6am - 8pm for viewing</li>
-
-								</ul>
-
-							</li>
-						</ul>
-					  </div>
-
-						<div class=" col-sm-4 col-md-12">
-						   <ul class="list-inline">
-								<li class="pull-left">
-									<span class="glyphicon glyphicon-hourglass"></span>&nbsp;
-									Property Status
-							   </li>
-								<li class="pull-right">
-										<a href="view-listing" class="btn btn-primary">
-											<span class=" glyphicon glyphicon-eye-open"> </span>&nbsp;View Listing
-										</a>
-								</li>
-						   </ul>
-						</div>
+				<div class="col-sm-4 col-md-12">
+						<?php property_list(); ?>
 				</div>
-				<!--end of listing-->
-				<div class="property-listing col-md-12">
-					 <div class="col-sm-4 col-md-4 thumbnail">
-						 <img class="img-responsive" src="images/no-thumbnail.png" />
-					 </div>
-
-					  <div class=" col-sm-4 col-md-8">
-							<ul class="">
-								<li>Location</li>
-								<li>Price</li>
-								<li>
-									<ul class="list-inline">
-										<li class=""><a href="#">Size</a></li>
-										<li class=""><a href="#">Garage size</a></li>
-										<li class=""><a href="#">2 Bedrooms</a></li>
-									</ul>
-
-									<ul class="list-inline">
-									<li class="">Open from 6am - 8pm for viewing</li>
-
-									</ul>
-
-								</li>
-							</ul>
-					  </div>
-
-						<div class=" col-sm-4 col-md-12">
-						   <ul class="list-inline">
-								<li class="pull-left">
-									<span class="glyphicon glyphicon-hourglass"></span>&nbsp;
-									Property Status
-							   </li>
-									<li class="pull-right">
-										<a href="view-listing" class="btn btn-primary">
-											<span class=" glyphicon glyphicon-eye-open"> </span>&nbsp;View Listing
-										</a>
-								</li>
-							</ul>
-						</div>
-				</div>
-				</div>
-			</div>
-		<!--end of listing-->
-		</div>
+<!--end of listing  -->
 
 <!--end of container-->
 	</div>

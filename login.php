@@ -19,7 +19,10 @@
 		?>
 	<div class="container">
 		<div class="login-form col-sm-12 col-md-4 col-md-offset-4">
-
+<div class="action-icon"><i class="fa fa-sign-in fa-lg"></i></div>
+<div class="">
+	<h3 class="text-center">Welcome back, login into your casa account.</h3>
+</div>
 			<form class="" role="form" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 					<div class="form-group">
 						<input type="text" name="email" class="form-control">

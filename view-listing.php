@@ -12,14 +12,7 @@
 						</div>
 					</div>
 				 <ul class="list-group">
-				<li class="list-group-item ">
-					<span class="glyphicon glyphicon-circle-arrow-right"></span>&nbsp;Single Home</li>
-			  	<li class="list-group-item ">
-					<span class="glyphicon glyphicon-circle-arrow-right"></span>&nbsp;Family Home</li>
-			  	<li class="list-group-item">
-					<span class="glyphicon glyphicon-circle-arrow-right"></span>&nbsp;Villa</li>
-			  	<li class="list-group-item ">
-					<span class="glyphicon glyphicon-circle-arrow-right"></span>&nbsp;Appartment</li>
+					<?php property_type(); ?>
 		  </ul>
 			</div>
 		</div>

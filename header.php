@@ -36,17 +36,17 @@
 
 			<div class="collapse navbar-collapse col-md-12 text-center ">
 					<ul class="nav navbar-nav">
-						<li><a href="index">Home</a></li>
+						<li><a href="index"><i class="fa fa-home"></i>&nbsp;Home</a></li>
 						<!-- <li><a href="property">Properties</a></li>
 						<li><a href="">About</a></li>
 						<li><a href="">Contact</a></li> -->
 						<?php if(!isset($user)) :?>
-							<li><a href="login">Login</a></li>
-							<li><a href="register">Register</a></li>
+							<li><a href="login"><i class="fa fa-sign-in"></i>&nbsp;Login</a></li>
+							<li><a href="register"><i class="fa fa-user-plus"></i>&nbsp;Register</a></li>
 						<?php else: ?>
 
 							<li><a href="member"> <i class="fa fa-user"></i>&nbsp; <?php echo $row['first_name'] ?> </a></li>
-								<li class=""><a data-toggle="modal" data-target="#logout" href="#"><i class="fa fa-sign-in"></i>&nbsp;logout</a></li>
+								<li class=""><a data-toggle="modal" data-target="#logout" href="#"><i class="fa fa-sign-out"></i>&nbsp;logout</a></li>
 						<?php endif; ?>
 
 						<li><a href="#" class="my-search"><i class="fa fa-search"></i>&nbsp;search</a></li>

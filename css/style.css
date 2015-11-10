@@ -73,3 +73,33 @@ a{
 	padding: 3%;
 	border-radius: 8px;
 }
+
+.user-listing li{
+	list-style: none;
+}
+
+
+.action-icon{
+	font-size: 350%;
+	text-align: center;
+	margin-bottom: 5%;
+}
+
+
+.user-listing li a:hover,.user-listing li a:focus,.breadcrumb a:hover{
+color: #927499;
+font-weight: bolder;
+text-decoration: none;
+}
+
+ .breadcrumb a:hover{
+text-decoration: none;
+}
+
+.carousel{
+	height: 250px;
+}
+
+.carousel .item{
+	height:100%;
+}

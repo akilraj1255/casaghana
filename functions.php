@@ -280,23 +280,26 @@ $query="select * from properties where email='$user'";
 $result=mysqli_query($dbc,$query);
 $row=mysqli_fetch_array($result);
 
+if (mysqli_num_rows($result)==1) {
 
-echo '<div class="col-md-4 thumbnail">
+echo '<div class="col-md-4 thumbnail ">
   <img class="img-responsive" src="images/no-thumbnail.png" />
 </div>
 
- <div class=" col-sm-4 col-md-8">
+ <div class=" col-sm-4 col-md-8 user-listing">
  <ul class="">
-  <li><a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></li>
-   <li>'.$row['location'].'</li>
-   <li>'.$row['price'].' $</li>
-   <li>'.$row['contact'].'</li>
-   <li>'.$row['email'].'</li>
+  <li><h3><a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></h3></li>
+   <li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
+   <ul class="list-inline">
+     <li> <i class="fa fa-usd"></i> '.$row['price'].'</li>
+     <li>  <i class="fa fa-phone"></i> '.$row['contact'].'</li>
+     <li><i class="fa fa-envelope"></i> <a href="mailto:'.$row['email'].'">  '.$row['email'].'</a></li>
+   </ul>
    <li>
      <ul class="list-inline">
-       <li class=""><a href="#">Size</a></li>
-       <li class=""><a href="#">Garage size</a></li>
-       <li class=""><a href="#">2 Bedrooms</a></li>
+       <li class=""><i class="fa fa-home"></i><a href="#"> Size</a></li>
+       <li class=""><i class="fa fa-automobile"></i><a href="#"> Garage size</a></li>
+       <li class=""><i class="fa fa-bed"></i><a href="#"> 2 Bedrooms</a></li>
      </ul>
 
      <ul class="list-inline">
@@ -322,4 +325,63 @@ echo '<div class="col-md-4 thumbnail">
     </ul>
  </div>
 </div>';
+# code...
+}else{
+  echo '<div> <p>You haven\'t posted anything yet </p</div>';
+}
+}
+
+//Property listings
+function property_list(){
+include 'dbconnect.php';
+
+$query="select * from properties ";
+$result=mysqli_query($dbc,$query);
+
+
+while($row=mysqli_fetch_array($result)){
+echo '<div class="col-md-4 thumbnail ">
+  <img class="img-responsive" src="images/no-thumbnail.png" />
+</div>
+
+ <div class=" col-sm-4 col-md-8 user-listing">
+         <ul class="">
+              <li><h3><a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></h3></li>
+               <li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
+               <ul class="list-inline">
+                 <li> <i class="fa fa-usd"></i> '.$row['price'].'</li>
+                 <li>  <i class="fa fa-phone"></i> '.$row['contact'].'</li>
+                 <li><i class="fa fa-envelope"></i> <a href="mailto:'.$row['email'].'">  '.$row['email'].'</a></li>
+           </ul>
+               <li>
+                 <ul class="list-inline">
+                   <li class=""><i class="fa fa-home"></i><a href="#"> Size</a></li>
+                   <li class=""><i class="fa fa-automobile"></i><a href="#"> Garage size</a></li>
+                   <li class=""><i class="fa fa-bed"></i><a href="#"> 2 Bedrooms</a></li>
+                 </ul>
+
+                 <ul class="list-inline">
+                 <li class="">Open from 6am - 8pm for viewing</li>
+
+                 </ul>
+
+               </li>
+       </ul>
+ </div>
+
+ <div class=" col-sm-4 col-md-12">
+        <ul class="list-inline">
+         <li class="pull-left">
+           <span class="fa fa-tags"></span>&nbsp;
+           Property Status
+          </li>
+         <li class="pull-right">
+             <a href="view-listing" class="btn btn-primary">
+               <span class=" glyphicon glyphicon-eye-open"> </span>&nbsp;View Listing
+             </a>
+         </li>
+        </ul>
+ </div>
+';
+}
 }

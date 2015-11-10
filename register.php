@@ -16,7 +16,10 @@
 
 	<div class="container">
 		<div class="login-form col-sm-12 col-md-4 col-md-offset-4">
-
+<div class="action-icon"><i class="fa fa-user-plus fa-lg"></i></div>
+<div class="">
+	<h3 class="text-center">Glad you want to join the community</h3>
+</div>
 			<form action="<?php $_SERVER['PHP_SELF']?>" method="POST" >
 					<div class="form-group col-md-6">
 					<input type="text" class="form-control" autofocus name="fname" autocomplete="off" placeholder="First Name" required>
