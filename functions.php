@@ -53,12 +53,21 @@ $properties="create table if not exists `properties`(
 )";
 
 $locations="create table if not exists `locations`(
-    `location_id` varchar(256) not null,
+
     `location_name` varchar(256) not null,
-    `region` varchar(256)  null,
-    `state` varchar(256)  null,
-      PRIMARY KEY (`location_id`)
+
+      PRIMARY KEY (`location_name`)
 )";
+
+$locationCheck="select * from locations";
+$loccheck=mysqli_query($dbc,$locationCheck);
+$location_result=mysqli_num_rows($loccheck);
+if($location_result==0){
+$locationInsert= "insert into locations  values('Greater Accra'),('Volta'),
+('Brong Ahafo'),('Ashanti'),('Upper East'),('Upper West'),
+('Nothern'),('Western'),('Central'),('Eastern')";
+ $insertloc=mysqli_query($dbc,$locationInsert);
+};
 
 $proptype="create table if not exists `property_type`(
 
