@@ -14,6 +14,7 @@ src:url('../fonts/Roboto-Light.ttf');
 
 body{
 	font-family: 'Roboto-Light',helvetica,arial,sans-serif;
+	background: #f3f7fa
 }
 .property-listing{
 
@@ -31,6 +32,9 @@ body{
 
 }
 
+.property-status{
+	font-size:250px;
+}
 
 .login-form{
 
@@ -87,13 +91,16 @@ a{
 
 
 .user-listing li a:hover,.user-listing li a:focus,.breadcrumb a:hover{
-color: #927499;
-font-weight: bolder;
+color: #ee3853;
 text-decoration: none;
 }
 
  .breadcrumb a:hover{
 text-decoration: none;
+}
+
+label{
+	color:#ee3853 ;
 }
 
 .carousel{

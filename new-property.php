@@ -33,6 +33,23 @@
               <label for="title">Name  Listing</label>
               <input type="text" name="title" value="" placeholder="Give me a title" class="form-control">
             </div>
+
+            <div class="form-group">
+              <label for="action">Property Status</label>
+              <select name="status" class="form-control">
+              <option select="" value="">Rent / Sale or Share</option>
+            <?php
+
+
+                                    $query="select * from property_status";
+                                      $result=mysqli_query($dbc,$query);
+
+                                        while($status=mysqli_fetch_array($result)){
+                              $status=$status['status_name'];
+                          echo '<option  >'."$status".'</option>'; } ?>
+              </select>
+            </div>
+
             <div class="form-group">
               <label for="location"> Property Location</label>
               <input type="text" name="location" value="" placeholder="Select a location fro your property" class="form-control">

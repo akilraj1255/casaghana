@@ -48,6 +48,7 @@ $properties="create table if not exists `properties`(
    `description` mediumtext NOT NULL,
    `contact` varchar(256) NULL,
    `location` text NOT NULL,
+   `status` varchar(256) not null,
    PRIMARY KEY (`email`)
 )";
 
@@ -65,20 +66,38 @@ $proptype="create table if not exists `property_type`(
   PRIMARY KEY (`type_name`)
 )";
 
- $property_id=md5(rand(0,10000));
+$property_id=md5(rand(0,10000));
 $insertCheck="select * from property_type";
 $check=mysqli_query($dbc,$insertCheck);
 $check_result=mysqli_num_rows($check);
 if($check_result==0){
 $insertPropType= "insert into property_type  values('single house'),('family house'),
 ('villa'),('appartment')";
-  $insertproptype=mysqli_query($dbc,$insertPropType);
+ $insertproptype=mysqli_query($dbc,$insertPropType);
 };
+
+$status="create table if not exists `property_status`(
+
+`status_name` varchar(256) not null,
+  PRIMARY KEY (`status_name`)
+)";
+
+
+$statusCheck="select * from property_status";
+$checkstatus=mysqli_query($dbc,$statusCheck);
+$status_result=mysqli_num_rows($checkstatus);
+if($status_result==0){
+$insertstatus= "insert into property_status  values('rent'),('lease'),
+('room sharing')";
+ $insertpropstatus=mysqli_query($dbc,$insertstatus);
+};
+
 
 	 $userresult=mysqli_query($dbc,$users);
    $propresult=mysqli_query($dbc,$properties);
    $typeresult=mysqli_query($dbc,$proptype);
    $locationresult=mysqli_query($dbc,$locations);
+    $statusresult=mysqli_query($dbc,$status);
 
 };
 
@@ -251,6 +270,7 @@ function new_listing(){
   $location=mysqli_escape_string($dbc,$_POST['location']);
   $price=mysqli_escape_string($dbc,$_POST['price']);
   $description=mysqli_escape_string($dbc,$_POST['description']);
+    $status=mysqli_escape_string($dbc,$_POST['status']);
   $listid=uniqid(rand(0,10000));
 
   $query="select * from properties where email='$email'";
@@ -258,8 +278,8 @@ function new_listing(){
   $row=mysqli_num_rows($result);
   if($row!=1){
     $query="insert into properties(owner,email,contact,title,location,
-    price,description,property_id) values('$name','$email','$contact',
-    '$title','$location','$price','$description','$listid')";
+    price,description,property_id,status) values('$name','$email','$contact',
+    '$title','$location','$price','$description','$listid','$status')";
 
     $result=mysqli_query($dbc,$query);
 
@@ -319,7 +339,7 @@ echo '<div class="col-md-4 thumbnail ">
       </li>
      <li class="pull-right">
          <a href="view-listing" class="btn btn-primary">
-           <span class=" glyphicon glyphicon-eye-open"> </span>&nbsp;View Listing
+           <span class=" fa fa-folder-open-o"> </span>&nbsp;View Listing
          </a>
      </li>
     </ul>
@@ -372,12 +392,13 @@ echo '<div class="col-md-4 thumbnail ">
  <div class=" col-sm-4 col-md-12">
         <ul class="list-inline">
          <li class="pull-left">
-           <span class="fa fa-tags"></span>&nbsp;
-           Property Status
+           <span class="fa fa-tags "></span>&nbsp;
+          '.ucfirst($row['status']).'
           </li>
          <li class="pull-right">
+
              <a href="view-listing" class="btn btn-primary">
-               <span class=" glyphicon glyphicon-eye-open"> </span>&nbsp;View Listing
+               <span class="fa fa-folder-open-o"> </span>&nbsp;View Listing
              </a>
          </li>
         </ul>

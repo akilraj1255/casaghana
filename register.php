@@ -40,7 +40,7 @@
 					<div class="form-group col-md-12">
 					<input type="password" class="form-control" name="password" autocomplete="off" placeholder="Your Password" required>
 					<br>
-							<button class="btn btn-primary"><i class="fa fa-sign-in"></i> Register</button>
+							<button class="btn btn-primary btn-block"><i class="fa fa-sign-in"></i> Register</button>
 					</div>
 
 					<div class="form-group col-md-12">
