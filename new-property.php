@@ -46,14 +46,29 @@
 
                                         while($status=mysqli_fetch_array($result)){
                               $status=$status['status_name'];
-                          echo '<option  >'."$status".'</option>'; } ?>
+                          echo '<option  >'."$status".'</option>';}
+                      ?>
               </select>
             </div>
 
             <div class="form-group">
               <label for="location"> Property Location</label>
-              <input type="text" name="location" value="" placeholder="Select a location fro your property" class="form-control">
+              <select name="location" class="form-control">
+              <option select="" value="">Your Property Location</option>
+            <?php
+
+
+                                    $query="select * from locations order by location_name ASC";
+                                      $result=mysqli_query($dbc,$query);
+
+                                        while($location=mysqli_fetch_array($result)){
+                              $location=$location['location_name'];
+                          echo '<option  >'."$location".'</option>';}
+                      ?>
+              </select>
             </div>
+        
+
             <div class="form-group">
               <label for="price">Property Value</label>
               <input type="text" name="price" value="" placeholder="From $" class="form-control">

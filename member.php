@@ -2,6 +2,7 @@
 <?php if(!isset($user)){
   header("location:index");
 } ?>
+<?php user_update() ?>
 <div class="container">
 
 
@@ -13,7 +14,7 @@
       <li><a href="member"  ><i class="fa fa-bars"></i>&nbsp;Update My Profile</a></li>
     </ul>
     <h3 class="page-header text-info">Update My Profile</h3>
-      <form class="form-horizontal" role="form" id="member-profile" action="" method="">
+      <form class="form-horizontal" role="form" id="member-profile" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
             <div class="form-group">
                 <label for="company">Your Name</label>
               <input type="text" name="name" value="<?php echo $row['first_name'] ?>" placeholder="Posting As?" class="form-control">
