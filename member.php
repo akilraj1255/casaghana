@@ -2,7 +2,7 @@
 <?php if(!isset($user)){
   header("location:index");
 } ?>
-<?php user_update() ?>
+<?php user_update() ;?>
 <div class="container">
 
 
