@@ -292,9 +292,9 @@ function new_listing(){
 
     $result=mysqli_query($dbc,$query);
 
-    echo '<p class="bg-success">Property Listing Successful</p>';
+    echo '<p class="alert alert-success">Property Listing Successful</p>';
   }else{
-    echo '<p class="bg-danger">My bad!!! Something went totally wrong. Try again later while i try to fix it <span class="close pull-right"> <span class="close pull-right"> <a href="#" >&times; </a></span></p>';
+    echo '<p class="alert alert-danger">My bad!!! Something went totally wrong. Try again later while i try to fix it <span class="close pull-right"> <span class="close pull-right"> <a href="#" >&times; </a></span></p>';
   }
 }
 
@@ -369,11 +369,13 @@ $result=mysqli_query($dbc,$query);
 
 
 while($row=mysqli_fetch_array($result)){
-echo '<div class="col-md-4 thumbnail ">
+echo '
+<div class="col-md-12 property-listing">
+<div class="col-md-4 thumbnail  ">
   <img class="img-responsive" src="images/no-thumbnail.png" />
 </div>
 
- <div class=" col-sm-4 col-md-8 user-listing">
+ <div class=" col-sm-4 col-md-8 user-listing" >
          <ul class="">
               <li><h3><a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></h3></li>
                <li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
@@ -411,7 +413,34 @@ echo '<div class="col-md-4 thumbnail ">
              </a>
          </li>
         </ul>
- </div>
+ </div></div>
 ';
 }
 }
+
+//updating user profile
+function user_update(){
+  include 'dbconnect.php';
+  @include 'session.php';
+
+  if($_POST){
+    $fname=mysqli_escape_string($dbc,$_POST['name']);
+
+  	$email=mysqli_escape_string($dbc,$_POST['email']);
+    $contact=$_POST['contact'];
+
+  			$query= "update users SET contact='$contact' , first_name='$fname', email='$email' where email='$user'";
+  			$query2="update properties SET contact='$contact' ,owner='$fname', email='$email' where email='$user'";
+  			$result=mysqli_query($dbc,$query);
+  			$result2=mysqli_query($dbc,$query2);
+
+        if($result && $result2){
+          echo '<p class="alert alert-success text-center">Your profile has been updated <span class="close pull-right"> <span class="close pull-right"> <a href="#" >&times; </a></span></p>';
+
+        }else{
+          echo '<p class="alert alert-danger">My bad!!! Something went totally wrong. Try again later while i try to fix it <span class="close pull-right"> <span class="close pull-right"> <a href="#" >&times; </a></span></p>';
+
+        }
+      }
+    }
+//

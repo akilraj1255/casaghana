@@ -67,6 +67,8 @@
                       ?>
               </select>
             </div>
+        
+
             <div class="form-group">
               <label for="price">Property Value</label>
               <input type="text" name="price" value="" placeholder="From $" class="form-control">

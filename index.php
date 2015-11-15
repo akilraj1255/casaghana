@@ -22,7 +22,7 @@
 	</div>
 <!--  end of sidebar-->
 
-	<div class="col-sm-4 col-md-8 property-listing">
+	<div class="col-sm-4 col-md-8 ">
 		<div  class=" panel panel-default">
 
 					<div class="panel-heading">
