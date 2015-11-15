@@ -109,3 +109,25 @@ label{
 .carousel .item{
 	height:100%;
 }
+
+
+/*overlay for lightbox*/
+
+#overlay{
+background: rgba(0, 0, 0, 0.7);/*adds opacity and rgba means red green blue alpha*/
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+left:0;
+display: none;
+text-align: center;
+}
+#overlay img{
+
+  margin-top: 10%;
+}
+
+#overlay p {
+  color: #e9e9e9;
+}

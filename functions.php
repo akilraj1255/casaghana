@@ -49,6 +49,7 @@ $properties="create table if not exists `properties`(
    `contact` varchar(256) NULL,
    `location` text NOT NULL,
    `status` varchar(256) not null,
+   `images` varchar(256),
    PRIMARY KEY (`email`)
 )";
 
@@ -272,14 +273,19 @@ function new_listing(){
   $description=mysqli_escape_string($dbc,$_POST['description']);
     $status=mysqli_escape_string($dbc,$_POST['status']);
   $listid=uniqid(rand(0,10000));
+  $target_path="uploads/";
+$target_path=$target_path.basename($_FILES['uploadedfile']['name']);
+if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
+
+}
 
   $query="select * from properties where email='$email'";
   $result=mysqli_query($dbc,$query);
   $row=mysqli_num_rows($result);
   if($row!=1){
     $query="insert into properties(owner,email,contact,title,location,
-    price,description,property_id,status) values('$name','$email','$contact',
-    '$title','$location','$price','$description','$listid','$status')";
+    price,description,property_id,status,images) values('$name','$email','$contact',
+    '$title','$location','$price','$description','$listid','$status','$target_path')";
 
     $result=mysqli_query($dbc,$query);
 
@@ -302,8 +308,8 @@ $row=mysqli_fetch_array($result);
 
 if (mysqli_num_rows($result)==1) {
 
-echo '<div class="col-md-4 thumbnail ">
-  <img class="img-responsive" src="images/no-thumbnail.png" />
+echo '<div class="col-md-4 thumbnail " id="image-gallery"">
+<a href="'.$row['images'].'"><img class="img-responsive" src="'.$row['images'].'" /></a>
 </div>
 
  <div class=" col-sm-4 col-md-8 user-listing">
@@ -360,8 +366,11 @@ $result=mysqli_query($dbc,$query);
 
 
 while($row=mysqli_fetch_array($result)){
-echo '<div class="col-md-4 thumbnail ">
-  <img class="img-responsive" src="images/no-thumbnail.png" />
+echo
+'
+<div class="property-listing">
+<div class="col-md-4 thumbnail " id="image-gallery"">
+<a href="'.$row['images'].'"><img class="img-responsive" src="'.$row['images'].'" /></a>
 </div>
 
  <div class=" col-sm-4 col-md-8 user-listing">
@@ -402,6 +411,7 @@ echo '<div class="col-md-4 thumbnail ">
              </a>
          </li>
         </ul>
+ </div>
  </div>
 ';
 }
@@ -444,8 +454,8 @@ function specificClassify(){
 
 
   while($row=mysqli_fetch_array($result)){
-  echo '<div class="col-md-4 thumbnail ">
-    <img class="img-responsive" src="images/no-thumbnail.png" />
+  echo '<div class="col-md-4 thumbnail " id="image-gallery"">
+<a href="'.$row['images'].'"><img class="img-responsive" src="'.$row['images'].'" /></a>
   </div>
 
    <div class=" col-sm-4 col-md-8 user-listing">

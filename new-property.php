@@ -16,7 +16,7 @@
         <?php new_listing(); ?>
     </div>
 
-      <form class="form-horizontal" role="form" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+      <form class="form-horizontal" role="form" action="<?php $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data" method="post">
             <div class="form-group">
               <label for="name">Posting As?</label>
               <input type="text" name="name" value="<?php echo $row['first_name'] ?>" placeholder="Posting As?" class="form-control">
@@ -67,12 +67,19 @@
                       ?>
               </select>
             </div>
-        
+
 
             <div class="form-group">
               <label for="price">Property Value</label>
               <input type="text" name="price" value="" placeholder="From $" class="form-control">
             </div>
+
+            <div class="form-group">
+                  <label for="price">Add Image</label>
+                	<input type="file" name="uploadedfile" class="form-control " />
+                	<input type="hidden" name="MAX_FILE_SIZE" value="100000">
+	         </div>
+
             <div class="form-group">
               <label for="description">Give some details</label>
               <textarea name="description" rows="8" cols="40" class="form-control"></textarea>
