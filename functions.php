@@ -508,3 +508,63 @@ function specificClassify(){
   ';
 }
 }
+
+//property category
+function property_category(){
+  include 'dbconnect.php';
+$category=$_GET['category']
+  $query="select * from properties where ";
+  $result=mysqli_query($dbc,$query);
+
+
+  while($row=mysqli_fetch_array($result)){
+  echo
+  '
+  <div class="property-listing">
+  <div class="col-md-4 thumbnail " id="image-gallery"">
+  <a href="'.$row['images'].'"><img class="img-responsive" src="'.$row['images'].'" /></a>
+  </div>
+
+   <div class=" col-sm-4 col-md-8 user-listing">
+           <ul class="">
+                <li><h3><a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></h3></li>
+                 <li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
+                 <ul class="list-inline">
+                   <li> <i class="fa fa-usd"></i> '.$row['price'].'</li>
+                   <li>  <i class="fa fa-phone"></i> '.$row['contact'].'</li>
+                   <li><i class="fa fa-envelope"></i> <a href="mailto:'.$row['email'].'">  '.$row['email'].'</a></li>
+             </ul>
+                 <li>
+                   <ul class="list-inline">
+                     <li class=""><i class="fa fa-home"></i><a href="#"> Size</a></li>
+                     <li class=""><i class="fa fa-automobile"></i><a href="#"> Garage size</a></li>
+                     <li class=""><i class="fa fa-bed"></i><a href="#"> 2 Bedrooms</a></li>
+                   </ul>
+
+                   <ul class="list-inline">
+                   <li class="">Open from 6am - 8pm for viewing</li>
+
+                   </ul>
+
+                 </li>
+         </ul>
+   </div>
+
+   <div class=" col-sm-4 col-md-12">
+          <ul class="list-inline">
+           <li class="pull-left">
+             <span class="fa fa-tags "></span>&nbsp;
+            '.ucfirst($row['status']).'
+            </li>
+           <li class="pull-right">
+
+               <a href="view-listing?listing='.$row['property_id'].'" class="btn btn-primary">
+                 <span class="fa fa-folder-open-o"> </span>&nbsp;View Listing
+               </a>
+           </li>
+          </ul>
+   </div>
+   </div>
+  ';
+  }
+  }
