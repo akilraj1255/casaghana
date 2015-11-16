@@ -31,7 +31,7 @@
 					</div>
 		<div class="panel-body">
 				<div class="col-sm-4 col-md-12">
-						<?php property_list(); ?>
+						<?php category_listing(); ?>
 				</div>
 <!--end of listing  -->
 

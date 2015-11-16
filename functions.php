@@ -270,6 +270,7 @@ function new_listing(){
   $title=mysqli_escape_string($dbc,$_POST['title']);
   $location=mysqli_escape_string($dbc,$_POST['location']);
   $price=mysqli_escape_string($dbc,$_POST['price']);
+    $type=mysqli_escape_string($dbc,$_POST['type']);
   $description=mysqli_escape_string($dbc,$_POST['description']);
     $status=mysqli_escape_string($dbc,$_POST['status']);
   $listid=uniqid(rand(0,10000));
@@ -284,8 +285,8 @@ if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
   $row=mysqli_num_rows($result);
   if($row!=1){
     $query="insert into properties(owner,email,contact,title,location,
-    price,description,property_id,status,images) values('$name','$email','$contact',
-    '$title','$location','$price','$description','$listid','$status','$target_path')";
+    price,description,property_id,status,images,property_type) values('$name','$email','$contact',
+    '$title','$location','$price','$description','$listid','$status','$target_path','$type')";
 
     $result=mysqli_query($dbc,$query);
 
@@ -510,14 +511,18 @@ function specificClassify(){
 }
 
 //property category
-function property_category(){
+function category_listing(){
   include 'dbconnect.php';
-$category=$_GET['category']
-  $query="select * from properties where ";
+$category=$_GET['category'];
+  $query="select * from properties where property_type='$category' ";
   $result=mysqli_query($dbc,$query);
 
 
-  while($row=mysqli_fetch_array($result)){
+
+    if(mysqli_num_rows($result)==1){
+
+    while($row=mysqli_fetch_array($result)){
+
   echo
   '
   <div class="property-listing">
@@ -566,5 +571,8 @@ $category=$_GET['category']
    </div>
    </div>
   ';
-  }
+}
+}else{
+  echo '<p class="text-center lead"> Bummer!!!, Nothing listed in this category</p>';
+}
   }

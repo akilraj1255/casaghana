@@ -68,6 +68,23 @@
               </select>
             </div>
 
+            <div class="form-group">
+              <label for="type"> Property Type</label>
+              <select name="type" class="form-control">
+              <option select="" value="">Your Property Type</option>
+            <?php
+
+
+                                    $query="select * from property_type ";
+                                      $result=mysqli_query($dbc,$query);
+
+                                        while($location=mysqli_fetch_array($result)){
+                              $location=$location['type_name'];
+                          echo '<option  >'."$location".'</option>';}
+                      ?>
+              </select>
+            </div>
+
 
             <div class="form-group">
               <label for="price">Property Value</label>
