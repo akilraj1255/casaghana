@@ -256,7 +256,7 @@ function property_type(){
     $category=$row['type_name'];
     echo'
     <li class="list-group-item ">
-      <a href="property?category='.$category.'"><span class="glyphicon glyphicon-circle-arrow-right"></span>&nbsp;'.$row['type_name'].'</a> </li>
+      <a href="property?category='.$category.'"><span class="glyphicon glyphicon-circle-arrow-right lead"></span>&nbsp;'.$row['type_name'].'</a> </li>
   ';
   }
 }
@@ -316,7 +316,8 @@ echo '<div class="col-md-4 thumbnail " id="image-gallery"">
  <div class=" col-sm-4 col-md-8 user-listing">
  <ul class="">
   <li><h3><a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></h3></li>
-   <li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
+<ul class="list-inline"><li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
+<li> <i class="fa fa-tags"></i> '.$row['property_type'].'</li></ul>
    <ul class="list-inline">
      <li> <i class="fa fa-usd"></i> '.$row['price'].'</li>
      <li>  <i class="fa fa-phone"></i> '.$row['contact'].'</li>
@@ -377,7 +378,8 @@ echo
  <div class=" col-sm-4 col-md-8 user-listing">
          <ul class="">
               <li><h3><a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></h3></li>
-               <li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
+            <ul class="list-inline"><li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
+<li> <i class="fa fa-tags"></i> '.$row['property_type'].'</li></ul>
                <ul class="list-inline">
                  <li> <i class="fa fa-usd"></i> '.$row['price'].'</li>
                  <li>  <i class="fa fa-phone"></i> '.$row['contact'].'</li>
@@ -462,7 +464,8 @@ function specificClassify(){
    <div class=" col-sm-4 col-md-8 user-listing">
            <ul class="">
                 <li><h3><a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></h3></li>
-                 <li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
+              <ul class="list-inline"><li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
+<li> <i class="fa fa-tags"></i> '.$row['property_type'].'</li></ul>
                  <ul class="list-inline">
                    <li> <i class="fa fa-usd"></i> '.$row['price'].'</li>
                    <li>  <i class="fa fa-phone"></i> '.$row['contact'].'</li>
@@ -533,7 +536,9 @@ $category=$_GET['category'];
    <div class=" col-sm-4 col-md-8 user-listing">
            <ul class="">
                 <li><h3><a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></h3></li>
-                 <li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
+              <ul class="list-inline"><li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
+<li> <i class="fa fa-tags"></i> '.$row['property_type'].'</li></ul>
+
                  <ul class="list-inline">
                    <li> <i class="fa fa-usd"></i> '.$row['price'].'</li>
                    <li>  <i class="fa fa-phone"></i> '.$row['contact'].'</li>
@@ -573,6 +578,6 @@ $category=$_GET['category'];
   ';
 }
 }else{
-  echo '<p class="text-center lead"> Bummer!!!, Nothing listed in this category</p>';
+  echo '<p class="text-center lead"> Bummer!!! Nothing listed in this category. </p>';
 }
   }

@@ -1,7 +1,7 @@
 <?php include 'header.php' ?>
 
 
-<div class="row">
+
 	<div class="container">
 	<div class="col-md-4">
 
@@ -40,6 +40,9 @@
 	</div>
 <!--	row ending-->
 </div>
+</div>
+</div>
+
 
 
 <?php include 'footer.php' ?>

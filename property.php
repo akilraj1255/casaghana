@@ -1,6 +1,7 @@
 <?php include 'header.php' ?>
 
-<div class="row">
+
+
 	<div class="container">
 	<div class="col-md-4">
 
@@ -9,7 +10,7 @@
 
 				<div class="panel-heading">
 						<div class="panel-title">
-							Property Type
+							Property Category
 						</div>
 					</div>
 				 <ul class="list-group">
@@ -21,7 +22,7 @@
 	</div>
 <!--  end of sidebar-->
 
-	<div class="col-sm-4 col-md-8 property-listing">
+	<div class="col-sm-4 col-md-8 ">
 		<div  class=" panel panel-default">
 
 					<div class="panel-heading">
@@ -39,6 +40,9 @@
 	</div>
 <!--	row ending-->
 </div>
+</div>
+</div>
+
 
 
 <?php include 'footer.php' ?>
