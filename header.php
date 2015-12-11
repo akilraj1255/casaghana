@@ -11,7 +11,7 @@
 	</head>
 <body>
 	<div class="row notice text-center">
-    Welcome to Casa Ghana Beta!! Rent,Lease, Buy or Sale your properties. <a href="member" class="btn call-btn">List Yours</a>
+    Welcome to Casa Ghana Beta!! Rent, Buy , Sale or Share your properties. <a href="new-property" class="btn call-btn">List Yours</a>
 	</div>
 <?php include('functions.php');
 	casa_setup();

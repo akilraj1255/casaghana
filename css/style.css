@@ -69,6 +69,15 @@ a{
 	background: #fafafa;
 }
 
+.btn-primary{
+
+	border:2px solid #000000;
+
+	border-radius:0;
+		background: #38424b;
+	color: #fafafa;
+	font-weight: bold;
+}
 .my-alert p{
 	padding: 3%;
 	border-radius: 8px;

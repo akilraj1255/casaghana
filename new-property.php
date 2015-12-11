@@ -1,6 +1,6 @@
 <?php include 'header.php' ?>
 <?php if(!isset($user)){
-  header("location:index");
+  header("location:login");
 } ?>
 <div class="container">
 
@@ -15,6 +15,7 @@
     <div class="alert my-alert">
         <?php new_listing(); ?>
     </div>
+      <h3 class="page-header text-info">List Your Property</h3>
 
       <form class="form-horizontal" role="form" action="<?php $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data" method="post">
             <div class="form-group">
