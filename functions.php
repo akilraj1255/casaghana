@@ -256,7 +256,7 @@ function property_type(){
     $category=$row['type_name'];
     echo'
     <li class="list-group-item ">
-      <a href="property?category='.$category.'"><span class="glyphicon glyphicon-circle-arrow-right lead"></span>&nbsp;'.$row['type_name'].'</a> </li>
+      <a href="property?category='.$category.'"><i class="fa fa-tags"></i>&nbsp;'.$row['type_name'].'</a> </li>
   ';
   }
 }
@@ -346,9 +346,9 @@ echo '<div class="col-md-4 thumbnail " id="image-gallery"">
        Property Status
       </li>
      <li class="pull-right">
-         <a href="view-listing" class="btn btn-primary">
-           <span class=" fa fa-folder-open-o"> </span>&nbsp;View Listing
-         </a>
+          <a href="view-listing?listing='.$row['property_id'].'" class="btn btn-primary">
+               <span class="fa fa-folder-open-o"> </span>&nbsp;View Listing
+             </a>
      </li>
     </ul>
  </div>
@@ -370,7 +370,7 @@ $result=mysqli_query($dbc,$query);
 while($row=mysqli_fetch_array($result)){
 echo
 '
-<div class="property-listing">
+<div class="property-listing listing">
 <div class="col-md-4 thumbnail " id="image-gallery"">
 <a href="'.$row['images'].'"><img class="img-responsive" src="'.$row['images'].'" /></a>
 </div>
