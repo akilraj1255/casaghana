@@ -10,7 +10,7 @@
 
 				<div class="panel-heading">
 						<div class="panel-title">
-							Property Category
+							Property Type
 						</div>
 					</div>
 				 <ul class="list-group">

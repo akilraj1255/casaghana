@@ -87,7 +87,9 @@ a{
 	list-style: none;
 }
 
-
+.user-listing{
+	margin-bottom: 4%
+}
 .action-icon{
 	font-size: 350%;
 	text-align: center;
@@ -104,15 +106,28 @@ text-decoration: none;
 text-decoration: none;
 }
 
+
 label{
 	color:#ee3853 ;
 }
 
-.notice, .panel-heading{
+.notice{
 	padding:1%;
 	background: #38424b;
 	color: #fafafa;
 	font-weight: bold;
+}
+
+.panel-heading{
+	padding:2%;
+	background: #38424b;
+	color: #fafafa;
+	font-weight: bolder;
+
+}
+
+.panel-title{
+	text-align: center
 }
 
 .call-btn{
