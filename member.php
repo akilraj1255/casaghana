@@ -1,6 +1,6 @@
 <?php include 'header.php' ?>
 <?php if(!isset($user)){
-  header("location:index");
+  header("location:login");
 } ?>
 <?php user_update() ;?>
 <div class="container">

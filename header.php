@@ -2,13 +2,17 @@
 <html lang="en">
 	<head><meta charset="utf-8">
 		<title>Casa Ghana</title>
+			 <link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
-		 <link href="css/bootstrap.min.css" rel="stylesheet">
+	
 		 <!-- including font awesome into the project -->
 		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 	</head>
 <body>
+	<div class="row notice text-center">
+    Welcome to Casa Ghana Beta!! Rent,Lease, Buy or Sale your properties. <a href="member" class="btn call-btn">List Yours</a>
+	</div>
 <?php include('functions.php');
 	casa_setup();
 	casa_tables();
@@ -19,7 +23,7 @@
 			logout_modal();
 
 	?>
-	<div class="navbar ">
+	<div class="navbar">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<div class="navbar-brand"> Casa Ghana </div>

@@ -493,12 +493,7 @@ function specificClassify(){
              <span class="fa fa-tags "></span>&nbsp;
             '.ucfirst($row['status']).'
             </li>
-           <li class="pull-right">
-
-               <a href="#" class="btn btn-primary">
-                 <span class="fa fa-folder-open-o"> </span>&nbsp;View Listing
-               </a>
-           </li>
+          
           </ul>
    </div>
 

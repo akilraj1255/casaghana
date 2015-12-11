@@ -4,10 +4,11 @@
 body{
 	font-family:helvetica,arial,sans-serif;
 	background: #d2d9e2;
+	overflow-x: hidden;
 }
 .property-listing{
 	margin-bottom: 15%;
-	
+
 
 }
 
@@ -20,6 +21,11 @@ body{
 	color: #fafafa;
 
 }
+.navbar a:hover{
+	color: #fafafa;
+
+}
+
 
 .property-status{
 	font-size:250px;
@@ -55,7 +61,7 @@ a{
 }
 
 .nav li > a:hover{
-	color: #927499;
+	color: #fafafa;
 	background: #000;
 }
 
@@ -93,6 +99,17 @@ label{
 	color:#ee3853 ;
 }
 
+.notice, .panel-heading{
+	padding:1%;
+	background: #38424b;
+	color: #fafafa;
+	font-weight: bold;
+}
+
+.call-btn{
+	background: #ee3853 ;
+	color:#fafafa;
+}
 .carousel{
 	height: 250px;
 }
