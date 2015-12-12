@@ -53,7 +53,7 @@
 								<li class=""><a data-toggle="modal" data-target="#logout" href="#"><i class="fa fa-sign-out"></i>&nbsp;logout</a></li>
 						<?php endif; ?>
 
-						<li><a href="#" class="my-search"><i class="fa fa-search"></i>&nbsp;search</a></li>
+						<!-- <li><a href="#" class="my-search"><i class="fa fa-search"></i>&nbsp;search</a></li> -->
 					</ul>
 
 			</div>

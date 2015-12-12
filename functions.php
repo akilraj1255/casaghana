@@ -365,9 +365,58 @@ include 'dbconnect.php';
 
 $query="select * from properties ";
 $result=mysqli_query($dbc,$query);
+$rows=mysqli_num_rows($result);
+if($rows==0){
+
+
+    echo '<p class="text-center lead"> Bummer!!! Nothing listed in this category. </p>';
+}elseif($rows>0){
+$query="select count(*) from properties ";
+$result=mysqli_query($dbc,$query);
+$roww=mysqli_fetch_row($result);
+
+$numrows=$roww[0];
+//number of rows to show
+$rowsperpage=5;
+
+//find out total pages
+$totalpages=ceil($numrows/$rowsperpage);
+
+//get the current page or set a default
+
+if(isset($_GET['currentpage']) && is_Numeric($_GET['currentpage'])){
+
+  //cast var is int
+  $currentpage=(int)$_GET['currentpage'];
+
+  }else{
+
+    //default page num
+    $currentpage=1;
+  }
+
+  //if current page is greater than total pages
+  if($currentpage>$totalpages){
+
+    $currentpage=$totalpages;
+  }//end if
+
+  //if current page is less than first page
+  if($currentpage<1){
+    $currentpage=1;
+  }
+//the offset based on current page
+  $offset=($currentpage-1)*$rowsperpage;
+
+  //get info from database
+$query="select * from properties   LIMIT $offset, $rowsperpage ";
+$result=mysqli_query($dbc,$query);
 
 
 while($row=mysqli_fetch_array($result)){
+
+
+  
 echo
 '
 <div class="property-listing listing">
@@ -417,7 +466,40 @@ echo
  </div>
  </div>
 ';
+}//end while
+
+          // building the pagination
+
+      echo '<div class="col-md-12">';
+      //range of num links
+      $range=3;
+
+      //if not on page 1 , don't show bak links
+
+
+      for($x=($currentpage-$range); $x<(($currentpage + $range)+1); $x++){
+
+          //if it's a valid page number
+
+        if(($x >0) && ($x<=$totalpages)){
+          // if we're on current page
+          if($x==$currentpage){
+              //highlight it
+            echo "<ul class='pagination'><li class='active' ><a href='#'>$x</a><li></ul>";
+
+          }else{
+            //make it a link
+            echo "<ul class='pagination'><li><a href='{$_SERVER['PHP_SELF']}?currentpage=$x'>$x</a><li></ul>";
+          }
+        }
+      }
+
+   echo '</div>';
 }
+
+
+
+
 }
 // ////
 //updating user profile

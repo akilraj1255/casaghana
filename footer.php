@@ -6,5 +6,5 @@
     <script src="js/bootstrap.min.js"></script>
     <script  src="js/custom.js"></script>
 <!-- adding lightbox to project -->
-  <script  src="js/lightbox.js"></script>
+ 
     

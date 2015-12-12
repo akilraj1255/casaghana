@@ -118,6 +118,7 @@ label{
 	font-weight: bold;
 }
 
+
 .panel-heading{
 	padding:2%;
 	background: #38424b;
@@ -134,12 +135,22 @@ label{
 	background: #ee3853 ;
 	color:#fafafa;
 }
+
+.call-btn:hover{
+	background:#129ad2 ;
+	color:#fafafa;
+}
 .carousel{
 	height: 250px;
 }
 
 .carousel .item{
 	height:100%;
+}
+
+.pagination > a .active{
+	background: #ee3853;
+	color: #fafafa;
 }
 
 
