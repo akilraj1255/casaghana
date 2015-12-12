@@ -26,7 +26,7 @@
 
 					<div class="panel-heading">
 						<div class="panel-title">
-						Latest Property Listings
+						<?php property_title(); ?>
 						</div>
 					</div>
 		<div class="panel-body">

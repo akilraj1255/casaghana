@@ -309,50 +309,50 @@ $row=mysqli_fetch_array($result);
 
 if (mysqli_num_rows($result)==1) {
 
-echo '<div class="col-md-4 thumbnail " id="image-gallery"">
+echo' 
+<div class="col-md-4 thumbnail clear-fix" id="image-gallery"">
 <a href="'.$row['images'].'"><img class="img-responsive" src="'.$row['images'].'" /></a>
 </div>
 
- <div class=" col-sm-4 col-md-8 user-listing">
- <ul class="">
-  <li><h3><a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></h3></li>
-<ul class="list-inline"><li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
-<li> <i class="fa fa-tags"></i> '.$row['property_type'].'</li></ul>
-   <ul class="list-inline">
-     <li> <i class="fa fa-usd"></i> '.$row['price'].'</li>
-     <li>  <i class="fa fa-phone"></i> '.$row['contact'].'</li>
-     <li><i class="fa fa-envelope"></i> <a href="mailto:'.$row['email'].'">  '.$row['email'].'</a></li>
-   </ul>
-   <li>
-     <ul class="list-inline">
-       <li class=""><i class="fa fa-home"></i><a href="#"> Size</a></li>
-       <li class=""><i class="fa fa-automobile"></i><a href="#"> Garage size</a></li>
-       <li class=""><i class="fa fa-bed"></i><a href="#"> 2 Bedrooms</a></li>
-     </ul>
+ <div class="col-sm-4 col-md-8 user-listing">
+         <ul class="col-md-12">
+              <li><h3><a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></h3></li>
+            <ul class="list-inline"><li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
+<li> <i class="fa fa-tags"></i> '.$row['property_type'].'</li>
+      <li>
+           <span class="fa fa-tags "></span>&nbsp;
+          '.ucfirst($row['status']).'
+          </li></ul>
+               <ul class="list-inline">
+                 <li> <i class="fa fa-usd"></i> '.$row['price'].'</li>
+                 <li>  <i class="fa fa-phone"></i> '.$row['contact'].'</li>
+                 <li><i class="fa fa-envelope"></i> <a href="mailto:'.$row['email'].'">  '.$row['email'].'</a></li>
+           </ul>
+               <li>
+                 <ul class="list-inline">
+                   <li class=""><i class="fa fa-home"></i><a href="#"> Size</a></li>
+                   <li class=""><i class="fa fa-automobile"></i><a href="#"> Garage size</a></li>
+                   <li class=""><i class="fa fa-bed"></i><a href="#"> 2 Bedrooms</a></li>
+                 </ul>
 
-     <ul class="list-inline">
-     <li class="">Open from 6am - 8pm for viewing</li>
+                 <ul class="list-inline">
+                 <li class="">Open from 6am - 8pm for viewing</li>
 
-     </ul>
+                 </ul>
+                 <ul class="list-inline">
+                  <li >
 
-   </li>
- </ul>
- </div>
-
- <div class=" col-sm-4 col-md-12">
-    <ul class="list-inline">
-     <li class="pull-left">
-       <span class="glyphicon glyphicon-hourglass"></span>&nbsp;
-       Property Status
-      </li>
-     <li class="pull-right">
-          <a href="view-listing?listing='.$row['property_id'].'" class="btn btn-primary">
+             <a href="view-listing?listing='.$row['property_id'].'" class="">
                <span class="fa fa-folder-open-o"> </span>&nbsp;View Listing
              </a>
-     </li>
-    </ul>
+         </li>
+                 </ul>
+
+               </li>
+       </ul>
  </div>
-</div>';
+'
+;
 # code...
 }else{
   echo '<div> <p>You haven\'t posted anything yet </p</div>';
@@ -419,20 +419,24 @@ while($row=mysqli_fetch_array($result)){
   
 echo
 '
-<div class="property-listing listing">
-<div class="col-md-4 thumbnail " id="image-gallery"">
+<div class="col-md-12 property-single">
+<div class="col-md-4 thumbnail clear-fix" id="image-gallery"">
 <a href="'.$row['images'].'"><img class="img-responsive" src="'.$row['images'].'" /></a>
 </div>
 
- <div class=" col-sm-4 col-md-8 user-listing">
-         <ul class="">
+ <div class="col-sm-4 col-md-8 user-listing">
+         <ul class="col-md-12">
               <li><h3><a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></h3></li>
             <ul class="list-inline"><li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
-<li> <i class="fa fa-tags"></i> '.$row['property_type'].'</li></ul>
+<li > <i class="fa fa-tags"></i> '.$row['property_type'].'</li>
+      <li>
+           <span class="fa fa-tags "></span>&nbsp;
+          '.ucfirst($row['status']).'
+          </li></ul>
                <ul class="list-inline">
                  <li> <i class="fa fa-usd"></i> '.$row['price'].'</li>
                  <li>  <i class="fa fa-phone"></i> '.$row['contact'].'</li>
-                 <li><i class="fa fa-envelope"></i> <a href="mailto:'.$row['email'].'">  '.$row['email'].'</a></li>
+                 <li ><i class="fa fa-envelope"></i> <a href="mailto:'.$row['email'].'">  '.$row['email'].'</a></li>
            </ul>
                <li>
                  <ul class="list-inline">
@@ -445,26 +449,20 @@ echo
                  <li class="">Open from 6am - 8pm for viewing</li>
 
                  </ul>
+                 <ul class="list-inline">
+                  <li style="font-weight:bolder" >
+
+             <a href="view-listing?listing='.$row['property_id'].'" class="">
+               <span class="fa fa-folder-open-o"> </span>&nbsp;View Listing
+             </a>
+         </li>
+                 </ul>
 
                </li>
        </ul>
  </div>
+</div>
 
- <div class=" col-sm-4 col-md-12">
-        <ul class="list-inline">
-         <li class="pull-left">
-           <span class="fa fa-tags "></span>&nbsp;
-          '.ucfirst($row['status']).'
-          </li>
-         <li class="pull-right">
-
-             <a href="view-listing?listing='.$row['property_id'].'" class="btn btn-primary">
-               <span class="fa fa-folder-open-o"> </span>&nbsp;View Listing
-             </a>
-         </li>
-        </ul>
- </div>
- </div>
 ';
 }//end while
 
@@ -528,6 +526,19 @@ function user_update(){
       }
     }
 //
+
+  function property_title(){
+ include 'dbconnect.php';
+  $listing=$_GET['listing'];
+
+  $query="select * from properties where property_id='$listing' ";
+  $result=mysqli_query($dbc,$query);
+
+  $row=mysqli_fetch_array($result);
+
+  echo '<span style="font-size:xx-large">'.$row['title'].'</span>';
+
+  }
 
 function specificClassify(){
 

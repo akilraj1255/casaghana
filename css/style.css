@@ -126,7 +126,19 @@ label{
 	font-weight: bolder;
 
 }
+.property_type a:hover{
+text-decoration: none;
+color:  #ee3853
+}
 
+.property-single{
+	margin-bottom: 4%;
+	
+	box-shadow: 4px 6px 8px #38424b;
+	background: #fafafa;
+	padding: 2%;
+	
+}
 .panel-title{
 	text-align: center
 }
