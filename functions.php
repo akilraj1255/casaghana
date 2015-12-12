@@ -558,7 +558,11 @@ function specificClassify(){
            <ul class="">
                 <li><h3><a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></h3></li>
               <ul class="list-inline"><li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
-<li> <i class="fa fa-tags"></i> '.$row['property_type'].'</li></ul>
+<li> <i class="fa fa-tags"></i> '.$row['property_type'].'</li>
+ <li>
+           <span class="fa fa-tags "></span>&nbsp;
+          '.ucfirst($row['status']).'
+          </li></ul>
                  <ul class="list-inline">
                    <li> <i class="fa fa-usd"></i> '.$row['price'].'</li>
                    <li>  <i class="fa fa-phone"></i> '.$row['contact'].'</li>
@@ -580,15 +584,6 @@ function specificClassify(){
          </ul>
    </div>
 
-   <div class=" col-sm-4 col-md-12">
-          <ul class="list-inline">
-           <li class="pull-left">
-             <span class="fa fa-tags "></span>&nbsp;
-            '.ucfirst($row['status']).'
-            </li>
-          
-          </ul>
-   </div>
 
 
    <div class="col-sm-4 col-md-12">
