@@ -9,8 +9,11 @@
       <li><a href="user-listing"  ><i class="fa fa-bars"></i>&nbsp;View My Properties</a></li>
       <li><a href="member"  ><i class="fa fa-bars"></i>&nbsp;Update My Profile</a></li>
     </ul>
-
 <h3 class="page-header">Your Property Listing</h3>
+   </div>
+
+
+   <div class="col-md-offset-3 col-md-6  property-single">
       <?php user_listings(); ?>
   </div>
 

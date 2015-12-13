@@ -4,7 +4,7 @@
 } ?>
 <div class="container">
 
-  <div class="col-md-offset-3 col-md-6">
+  <div class="col-md-offset-3 col-md-6 ">
 
     <ul class="breadcrumb text-center">
       <li>  <a href="new-property" ><i class="fa fa-bars"></i>&nbsp;List New Property</a></li>
@@ -17,7 +17,7 @@
     </div>
       <h3 class="page-header text-info">List Your Property</h3>
 
-      <form class="form-horizontal" role="form" action="<?php $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data" method="post">
+      <form class="form-horizontal property-single" style="padding:7%" role="form" action="<?php $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data" method="post">
             <div class="form-group">
               <label for="name">Posting As?</label>
               <input type="text" name="name" value="<?php echo $row['first_name'] ?>" placeholder="Posting As?" class="form-control">

@@ -50,6 +50,10 @@ $properties="create table if not exists `properties`(
    `location` text NOT NULL,
    `status` varchar(256) not null,
    `images` varchar(256),
+   `post_date` date,
+   `size` varchar(256),
+   `bedrooms` varchar(256),
+   `gsize` varchar(256),
    PRIMARY KEY (`email`)
 )";
 
@@ -310,11 +314,11 @@ $row=mysqli_fetch_array($result);
 if (mysqli_num_rows($result)==1) {
 
 echo' 
-<div class="col-md-4 thumbnail clear-fix" id="image-gallery"">
+<div class="col-md-4 thumbnail clear-fix" id="image-gallery">
 <a href="'.$row['images'].'"><img class="img-responsive" src="'.$row['images'].'" /></a>
 </div>
 
- <div class="col-sm-4 col-md-8 user-listing">
+ <div class="col-sm-4 col-md-8 user-listing ">
          <ul class="col-md-12">
               <li><h3><a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></h3></li>
             <ul class="list-inline"><li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
@@ -355,7 +359,8 @@ echo'
 ;
 # code...
 }else{
-  echo '<div> <p>You haven\'t posted anything yet </p</div>';
+  echo "<div class='col-md-12 property-single'>
+        <p class='text-center lead'>You haven't posted anything yet </p</div>";
 }
 }
 
@@ -369,7 +374,9 @@ $rows=mysqli_num_rows($result);
 if($rows==0){
 
 
-    echo '<p class="text-center lead"> Bummer!!! Nothing listed in this category. </p>';
+    echo '<div class="col-md-12 property-single">
+              <p class="text-center lead"> Bummer!!! Nothing listed in this category. </p>
+          </div>';
 }elseif($rows>0){
 $query="select count(*) from properties ";
 $result=mysqli_query($dbc,$query);
@@ -661,6 +668,8 @@ $category=$_GET['category'];
   ';
 }
 }else{
-  echo '<p class="text-center lead"> Bummer!!! Nothing listed in this category. </p>';
+  echo '<div class="col-md-12 property-single">
+              <p class="text-center lead"> Bummer!!! Nothing listed in this category. </p>
+          </div>';
 }
   }

@@ -14,7 +14,7 @@
       <li><a href="member"  ><i class="fa fa-bars"></i>&nbsp;Update My Profile</a></li>
     </ul>
     <h3 class="page-header text-info">Update My Profile</h3>
-      <form class="form-horizontal" role="form" id="member-profile" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+      <form class="form-horizontal property-single" style="padding:7%" role="form" id="member-profile" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
             <div class="form-group">
                 <label for="company">Your Name</label>
               <input type="text" name="name" value="<?php echo $row['first_name'] ?>" placeholder="Posting As?" class="form-control">
@@ -35,7 +35,7 @@
 
 
             <div class="form-group">
-              <button type="submit" name="button" class="btn btn-block btn-primary"><i class="fa fa-save"></i>&nbsp;Update</button>
+              <a type="submit" name="button" class=" btn-primary btn btn-block"><i class="fa fa-save"></i>&nbsp;Update</a>
             </div>
       </form>
     </div>
