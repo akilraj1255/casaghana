@@ -15,7 +15,7 @@
     <div class="alert my-alert">
         <?php new_listing(); ?>
     </div>
-      <h3 class="page-header text-info">List Your Property</h3>
+      <h3 class="page-header text-info">List  Property</h3>
 
       <form class="form-horizontal property-single" style="padding:7%" role="form" action="<?php $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data" method="post">
             <div class="form-group">
