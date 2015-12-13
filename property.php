@@ -10,29 +10,47 @@
 
 				<div class="panel-heading">
 						<div class="panel-title">
-							Property Category
+							Property Type
 						</div>
 					</div>
-				 <ul class="list-group">
+				 <ul class="list-group property_type">
 					 		<?php property_type(); ?>
 		  		</ul>
 			</div>
+
+		</div>
+
+		<!-- /property type -->
+
+
+
+
+		<div class="col-sm-4 col-md-12 ">
+			<div  class=" panel panel-default">
+
+				<div class="panel-heading">
+						<div class="panel-title">
+							Ad Space
+						</div>
+					</div>
+					<div class="property-body">
+				<h3 style="padding:1%">This ad space is for hire</h3>
+		  		
+		  			</div>
+			</div>
+
 		</div>
 
 	</div>
 <!--  end of sidebar-->
 
 	<div class="col-sm-4 col-md-8 ">
-		<div  class=" panel panel-default">
-
-					<div class="panel-heading">
-						<div class="panel-title">
-						Latest Property Listings
-						</div>
-					</div>
-		<div class="panel-body">
+	
 				<div class="col-sm-4 col-md-12">
-						<?php category_listing(); ?>
+
+					<div class="property-listing listing col-md-12">
+						<?php property_list(); ?>
+					</div>
 				</div>
 <!--end of listing  -->
 

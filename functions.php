@@ -12,10 +12,6 @@ function casa_setup(){
 
 //storing db after creation of database
 
-
-
-
-
 //creation of tables
 function casa_tables(){
 include 'dbconnect.php';
@@ -126,7 +122,7 @@ $fetch=mysqli_fetch_array($result);
 	@$_SESSION['expire'] = time()+5*60;
 
 		echo '<p class="alert alert-success text-center">Welcome &nbsp;'.$first_name .'&nbsp; '.$last_name.' <span class="close pull-right"> <a href="#" >&times;</a></span></p>';
-				header("location:index");}else{echo '<p class="alert alert-danger text-center">Wrong Email / Password! <span class="close pull-right"> <a href="#" >&times;</a></span></p>';}
+				header("location:property");}else{echo '<p class="alert alert-danger text-center">Wrong Email / Password! <span class="close pull-right"> <a href="#" >&times;</a></span></p>';}
 
 	mysqli_close($dbc);
 	};
@@ -673,3 +669,19 @@ $category=$_GET['category'];
           </div>';
 }
   }
+
+  function recentListings(){
+include 'dbconnect.php';
+
+$query="select * from properties LIMIT 5";
+$result=mysqli_query($dbc,$query);
+$rows=mysqli_num_rows($result);
+if($rows==0){
+  
+}else{
+  while($row=mysqli_fetch_array($result)){
+
+  echo '  <li class=""> <i class="fa fa-chevron-circle-right"></i>&nbsp;<a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></li>';
+}
+}
+}

@@ -8,7 +8,7 @@
 		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 	</head>
-<body>
+<body id="wrapper">
 	<?php
 	include 'dbconnect.php';
 	 include('functions.php');
@@ -18,7 +18,7 @@
 
 		?>
 	<div class="container">
-		<div class="login-form col-sm-12 col-md-4 col-md-offset-4">
+		<div class="login-form property-single col-sm-12 col-md-4 col-md-offset-4">
 <div class="action-icon"><i class="fa fa-sign-in fa-lg"></i></div>
 <div class="">
 	<h3 class="text-center">Welcome back, login into your casa account.</h3>
@@ -41,10 +41,10 @@
 						<button class="btn btn-primary btn-block"><i class="fa fa-sign-in"></i> Login</button>
 					</div>
 
-					<p><ul class="list-inline">
-						<li>	<a href="register"><i class="fa fa-sign-in"></i>Open Account</a></li>
-						<li><a href=""><i class="fa fa-question"></i>Lost Password</a></li>
-						<li><a href="index"><i class="fa fa-home"></i>Front Door</a></li></ul>
+					<p><ul class="list-inline text-center">
+						<li>	<a href="register"><i class="fa fa-sign-in"></i>&nbsp;Open Account</a></li>
+						<li><a href=""><i class="fa fa-question"></i>&nbsp;Lost Password</a></li>
+						<li><a href="index"><i class="fa fa-home"></i>&nbsp;Front Door</a></li></ul>
 				</p>
 		</form>
 

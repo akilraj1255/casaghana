@@ -41,6 +41,7 @@
 			<div class="collapse navbar-collapse col-md-12 text-center ">
 					<ul class="nav navbar-nav">
 						<li><a href="index"><i class="fa fa-home"></i>&nbsp;Home</a></li>
+						<li><a href="property"><i class="fa fa-building"></i>&nbsp;Properties</a></li>
 						<!-- <li><a href="property">Properties</a></li>
 						<li><a href="">About</a></li>
 						<li><a href="">Contact</a></li> -->

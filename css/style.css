@@ -1,4 +1,55 @@
 /*imported forms*/
+#wrapper{
+	
+	background: url('../images/hero.jpg');
+background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.jumbotron{
+		 background: url('../images/hero.jpg') no-repeat bottom center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 300px;
+    margin-top: -2%;
+    padding: 4%;
+    box-sizing:border-box;
+}
+
+.jumbrotext{
+	   	background: #fafafa;
+	color: #38424b;
+    font-weight: lighter;
+    margin: 0;
+    position: relative;
+    display: block;
+    padding: 2%;
+     box-sizing:border-box;
+     opacity: 0.7;
+
+}
+
+li{
+	list-style: none;
+}
+
+.login-form a{
+	color: #000000;
+}
+
+.login-form a:hover{
+	color: #ee3853;
+	text-decoration: none;
+}
+
+
+.jumbrotext > .jtext{
+	opacity: 1;
+}
 
 
 body{
@@ -116,6 +167,18 @@ label{
 	background: #38424b;
 	color: #fafafa;
 	font-weight: bold;
+}
+
+.home-nav{
+	padding:1%;
+	background: #38424b;
+	color: #fafafa;
+	font-weight: bold;
+}
+
+.home-nav > .nav li > a:hover{
+	color: #fafafa;
+	background: #000;
 }
 
 
