@@ -10,8 +10,7 @@
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 	</head>
 <body id="wrapper">
-<?php include 'dbconnect.php';
-	 include('functions.php'); ?>
+<?php include 'header.php';?>
 		<div class=" col-md-6" >
 
 
