@@ -63,7 +63,7 @@
 
 	<!-- end of navigation-->
 
-	<div class="container">
+	<!-- <div class="container">
 			<form class="col-md-12 search">
 				<div class="col-md-10 form-group center-block">
 					<input type="search" placeholder="Search for properties" class="form-control center-block" />
@@ -73,4 +73,4 @@
 					<a href="" class="btn btn-primary">Search</a>
 				</div>
 			</form>
-	</div>
+	</div> -->

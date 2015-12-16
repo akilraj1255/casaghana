@@ -11,34 +11,68 @@
 	</head>
 <body id="wrapper">
 <?php include 'header.php';?>
-		<div class=" col-md-6" >
 
 
+<div class="row">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			  </ol>
 
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
+			    <div class="item active">
+			      <img src="..." alt="...">
+			      <div class="carousel-caption">
+			        ...
+			      </div>
+			    </div>
+			    <div class="item">
+			      <img src="..." alt="...">
+			      <div class="carousel-caption">
+			        ...
+			      </div>
+			    </div>
+			    ...
+			  </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+			</div>
+
+</div>
+
+<div class="row">
+		<div class="container">
+			<div class="col-md-12">
+					<div class="single-box col-md-6" style="margin-right:1%" >
+
+									<ul>
+									<li> <h3 class="page-header">Featured Listings</h3> </li>
+										<?php recentListings(); ?>
+								</ul>
+					</div>
+
+					<div class="single-box  col-md-5">
+								<ul>
+									<li> <h3 class="page-header">5 Recent Listings</h3> </li>
+										<?php recentListings(); ?>
+								</ul>
+					</div>
+
+			</div>
 		</div>
-
-		<div class="property-single login-form col-md-5" style="margin:10% auto">
-					<ul>
-						<li> <h3 class="page-header">List Your properties on Casa Ghana</h3> </li>
-						<li class="lead"> <i class="fa fa-chevron-circle-right"></i>&nbsp;<a href="register">Open an account</a>  </li>
-						<li class="lead"> <i class="fa fa-chevron-circle-right"></i>&nbsp;<a href="login">Login if you already have one</a> </li>
-						<li class="lead"> <i class="fa fa-chevron-circle-right"></i>&nbsp;<a href="property">View Listed Properties</a> </li>
-	
-					</ul>
-
-					<ul>
-						<li> <h3 class="page-header">5 Recent Listings</h3> </li>
-							<?php recentListings(); ?>
-					</ul>
-		</div>
-
-
-		<div class=" col-md-1" >
-
-
-		</div>
-
-
+</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

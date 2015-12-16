@@ -205,6 +205,17 @@ padding: 1%
 	padding: 2%;
 	
 }
+
+.carousel{
+	margin-bottom: 3%
+}
+.single-box{
+	margin-bottom: 4%;
+	background: #fafafa;
+	padding: 1%;
+	box-sizing:border-box;
+	
+}
 .panel-title{
 	text-align: center
 }
