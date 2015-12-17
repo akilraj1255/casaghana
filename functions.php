@@ -256,7 +256,7 @@ function property_type(){
     $category=$row['type_name'];
     echo'
     <li class="list-group-item ">
-      <a href="property?category='.$category.'"><i class="fa fa-tags"></i>&nbsp;'.$row['type_name'].'</a> </li>
+      <a href="property-category?category='.$category.'"><i class="fa fa-tags"></i>&nbsp;'.$row['type_name'].'</a> </li>
   ';
   }
 }
@@ -604,71 +604,143 @@ function category_listing(){
   include 'dbconnect.php';
 $category=$_GET['category'];
   $query="select * from properties where property_type='$category' ";
-  $result=mysqli_query($dbc,$query);
+  
+$result=mysqli_query($dbc,$query);
+$rows=mysqli_num_rows($result);
+if($rows==0){
 
 
-
-    if(mysqli_num_rows($result)==1){
-
-    while($row=mysqli_fetch_array($result)){
-
-  echo
-  '
-  <div class="property-listing">
-  <div class="col-md-4 thumbnail " id="image-gallery"">
-  <a href="'.$row['images'].'"><img class="img-responsive" src="'.$row['images'].'" /></a>
-  </div>
-
-   <div class=" col-sm-4 col-md-8 user-listing">
-           <ul class="">
-                <li><h3><a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></h3></li>
-              <ul class="list-inline"><li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
-<li> <i class="fa fa-tags"></i> '.$row['property_type'].'</li></ul>
-
-                 <ul class="list-inline">
-                   <li> <i class="fa fa-usd"></i> '.$row['price'].'</li>
-                   <li>  <i class="fa fa-phone"></i> '.$row['contact'].'</li>
-                   <li><i class="fa fa-envelope"></i> <a href="mailto:'.$row['email'].'">  '.$row['email'].'</a></li>
-             </ul>
-                 <li>
-                   <ul class="list-inline">
-                     <li class=""><i class="fa fa-home"></i><a href="#"> Size</a></li>
-                     <li class=""><i class="fa fa-automobile"></i><a href="#"> Garage size</a></li>
-                     <li class=""><i class="fa fa-bed"></i><a href="#"> 2 Bedrooms</a></li>
-                   </ul>
-
-                   <ul class="list-inline">
-                   <li class="">Open from 6am - 8pm for viewing</li>
-
-                   </ul>
-
-                 </li>
-         </ul>
-   </div>
-
-   <div class=" col-sm-4 col-md-12">
-          <ul class="list-inline">
-           <li class="pull-left">
-             <span class="fa fa-tags "></span>&nbsp;
-            '.ucfirst($row['status']).'
-            </li>
-           <li class="pull-right">
-
-               <a href="view-listing?listing='.$row['property_id'].'" class="btn btn-primary">
-                 <span class="fa fa-folder-open-o"> </span>&nbsp;View Listing
-               </a>
-           </li>
-          </ul>
-   </div>
-   </div>
-  ';
-}
-}else{
-  echo '<div class="col-md-12 property-single">
+    echo '<div class="col-md-12 property-single">
               <p class="text-center lead"> Bummer!!! Nothing listed in this category. </p>
           </div>';
-}
+}elseif($rows>0){
+$query="select count(*) from properties where property_type='$category' ";
+$result=mysqli_query($dbc,$query);
+$roww=mysqli_fetch_row($result);
+
+$numrows=$roww[0];
+//number of rows to show
+$rowsperpage=5;
+
+//find out total pages
+$totalpages=ceil($numrows/$rowsperpage);
+
+//get the current page or set a default
+
+if(isset($_GET['currentpage']) && is_Numeric($_GET['currentpage'])){
+
+  //cast var is int
+  $currentpage=(int)$_GET['currentpage'];
+
+  }else{
+
+    //default page num
+    $currentpage=1;
   }
+
+  //if current page is greater than total pages
+  if($currentpage>$totalpages){
+
+    $currentpage=$totalpages;
+  }//end if
+
+  //if current page is less than first page
+  if($currentpage<1){
+    $currentpage=1;
+  }
+//the offset based on current page
+  $offset=($currentpage-1)*$rowsperpage;
+
+  //get info from database
+$query="select * from properties where property_type='$category'   LIMIT $offset, $rowsperpage ";
+$result=mysqli_query($dbc,$query);
+
+
+while($row=mysqli_fetch_array($result)){
+
+
+  
+echo
+'
+<div class="col-md-12 property-single">
+<div class="col-md-4 thumbnail clear-fix" id="image-gallery"">
+<a href="'.$row['images'].'"><img class="img-responsive" src="'.$row['images'].'" /></a>
+</div>
+
+ <div class="col-sm-4 col-md-8 user-listing">
+         <ul class="col-md-12">
+              <li><h3><a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></h3></li>
+            <ul class="list-inline"><li> <i class="fa fa-location-arrow"></i> '.$row['location'].'</li>
+<li > <i class="fa fa-tags"></i> '.$row['property_type'].'</li>
+      <li>
+           <span class="fa fa-tags "></span>&nbsp;
+          '.ucfirst($row['status']).'
+          </li></ul>
+               <ul class="list-inline">
+                 <li> <i class="fa fa-usd"></i> '.$row['price'].'</li>
+                 <li>  <i class="fa fa-phone"></i> '.$row['contact'].'</li>
+                 <li ><i class="fa fa-envelope"></i> <a href="mailto:'.$row['email'].'">  '.$row['email'].'</a></li>
+           </ul>
+               <li>
+                 <ul class="list-inline">
+                   <li class=""><i class="fa fa-home"></i><a href="#"> Size</a></li>
+                   <li class=""><i class="fa fa-automobile"></i><a href="#"> Garage size</a></li>
+                   <li class=""><i class="fa fa-bed"></i><a href="#"> 2 Bedrooms</a></li>
+                 </ul>
+
+                 <ul class="list-inline">
+                 <li class="">Open from 6am - 8pm for viewing</li>
+
+                 </ul>
+                 <ul class="list-inline">
+                  <li style="font-weight:bolder" >
+
+             <a href="view-listing?listing='.$row['property_id'].'" class="">
+               <span class="fa fa-folder-open-o"> </span>&nbsp;View Listing
+             </a>
+         </li>
+                 </ul>
+
+               </li>
+       </ul>
+ </div>
+</div>
+
+';
+}//end while
+
+          // building the pagination
+
+      echo '<div class="col-md-12">';
+      //range of num links
+      $range=3;
+
+      //if not on page 1 , don't show bak links
+
+
+      for($x=($currentpage-$range); $x<(($currentpage + $range)+1); $x++){
+
+          //if it's a valid page number
+
+        if(($x >0) && ($x<=$totalpages)){
+          // if we're on current page
+          if($x==$currentpage){
+              //highlight it
+            echo "<ul class='pagination'><li class='active' ><a href='#'>$x</a><li></ul>";
+
+          }else{
+            //make it a link
+            echo "<ul class='pagination'><li><a href='{$_SERVER['PHP_SELF']}?currentpage=$x'>$x</a><li></ul>";
+          }
+        }
+      }
+
+   echo '</div>';
+}
+
+
+
+}
 
   function recentListings(){
 include 'dbconnect.php';

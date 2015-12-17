@@ -1,6 +1,7 @@
 <?php include 'header.php' ?>
 
-<div class="row">
+
+
 	<div class="container">
 	<div class="col-md-4">
 
@@ -12,26 +13,44 @@
 							Property Type
 						</div>
 					</div>
-				 <ul class="list-group">
+				 <ul class="list-group property_type">
 					 		<?php property_type(); ?>
 		  		</ul>
 			</div>
+
+		</div>
+
+		<!-- /property type -->
+
+
+
+
+		<div class="col-sm-4 col-md-12 ">
+			<div  class=" panel panel-default">
+
+				<div class="panel-heading">
+						<div class="panel-title">
+							Ad Space
+						</div>
+					</div>
+					<div class="property-body">
+				<h3 style="padding:1%">This ad space is for hire</h3>
+		  		
+		  			</div>
+			</div>
+
 		</div>
 
 	</div>
 <!--  end of sidebar-->
 
 	<div class="col-sm-4 col-md-8 ">
-		<div  class=" panel panel-default">
-
-					<div class="panel-heading">
-						<div class="panel-title">
-						<?php property_title(); ?>
-						</div>
-					</div>
-		<div class="panel-body">
+	
 				<div class="col-sm-4 col-md-12">
-						<?php specificClassify(); ?>
+
+					<div class="property-listing listing col-md-12">
+						<?php category_listing(); ?>
+					</div>
 				</div>
 <!--end of listing  -->
 
@@ -39,10 +58,9 @@
 	</div>
 <!--	row ending-->
 </div>
+</div>
+</div>
 
-</div>
 
-</div>
-</div>
 
 <?php include 'footer.php' ?>

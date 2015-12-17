@@ -25,7 +25,7 @@
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner" role="listbox">
 			    <div class="item active">
-			      <img src="..." alt="...">
+			      <img src="..." alt="..." class="img-responsive">
 			      <div class="carousel-caption">
 			        ...
 			      </div>
@@ -65,7 +65,7 @@
 
 					<div class="single-box  col-md-5">
 								<ul>
-									<li> <h3 class="page-header">5 Recent Listings</h3> </li>
+									<li> <h3 class="page-header"> Recent Listings</h3> </li>
 										<?php recentListings(); ?>
 								</ul>
 					</div>
@@ -74,12 +74,4 @@
 		</div>
 </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
-   <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  <script  src="js/custom.js"></script>
-
-		</body>
-		</html>
+  <?php include 'footer.php' ?>

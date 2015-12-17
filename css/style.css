@@ -169,6 +169,23 @@ label{
 	font-weight: bold;
 }
 
+.footer{
+	padding:4%;
+	background: #38424b;
+	color: #fafafa;
+	font-weight: bold;
+}
+
+.footer a{
+	color: #fafafa;
+
+}
+
+.footer a:hover{
+	color: #ee3853;
+	text-decoration: none;
+}
+
 .home-nav{
 	padding:1%;
 	background: #38424b;
@@ -207,7 +224,7 @@ padding: 1%
 }
 
 .carousel{
-	margin-bottom: 3%
+	margin-bottom:4%;
 }
 .single-box{
 	margin-bottom: 4%;
