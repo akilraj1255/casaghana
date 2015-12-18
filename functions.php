@@ -762,3 +762,73 @@ if($rows==0){
 }
 }
 }
+
+
+// recover 
+
+function recover(){
+
+include 'dbconnect.php';
+
+  if($_POST){
+  $email=mysqli_escape_string($dbc,$_POST['email']);
+//  check if email exist
+  $query="select * from  users where email='$email'";
+  $result=mysqli_query($dbc,$query);
+  $row=mysqli_num_rows($result);
+  if($row==1){
+  $userid=md5(md5(uniqid(rand())));
+
+  $query="update users SET user_id='$userid' where email='$email'";
+  $result=mysqli_query($dbc,$query);
+
+
+      if($result){
+          //sending confirmation code to new user's email
+      $to=$email;
+      
+      //my subject
+      $subject="Your Password Reset Link";
+
+
+      //from
+      $header="From: idamou.com";
+
+      //My Message
+      $message="Please follow this link  \r\n";
+      $message.="click on this link to set a new password for  your account\r\n";
+      $message.="http://www.casaghana.com/new-password?userid=$userid";
+
+      //sending the mail
+      $sentmail=mail($to,$subject,$message,$header);
+
+    };
+
+echo '<p class="alert alert-success"> We\'ve sent you a message, please click on the link in your email to set your new password</p>';}else{echo '<p class="alert alert-danger text-center">Something is not right</p>';}
+
+}};
+
+// reseting password
+function reset_pass(){
+
+  if($_POST){
+      $userid=$_GET['userid'];
+
+    $password=mysqli_escape_string($dbc,md5(md5($_POST['password'])));
+    $confpassword=mysqli_escape_string($dbc,md5(md5($_POST['password-confirm'])));
+
+    if($password=="" and $confpassword==""){
+
+      echo '<p class="alert text-center alert-danger">Please fill the boxes</p>';
+    }elseif($password!=$confpassword){
+      echo '<p class="alert text-center alert-danger">Passwords don\'t match</p>';
+    }else{
+
+      $query="update users SET password='$password' where user_id='$userid'";
+      $result=mysqli_query($dbc,$query);
+
+      echo '<p class="alert text-center alert-success">Your new password has been saved. kindly <a href="signin">Login</a> <span class="close pull-right"> <a href="#"> X </span></p>';
+    }
+  }
+
+}

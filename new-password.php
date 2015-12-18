@@ -14,36 +14,32 @@
 	 include('functions.php');
 		include 'session.php';
 		include 'session-expire.php';
-			login();
+			reset_pass();
 
 		?>
 	<div class="container">
 		<div class="login-form property-single col-sm-12 col-md-4 col-md-offset-4">
 <div class="action-icon"><i class="fa fa-sign-in fa-lg"></i></div>
 <div class="">
-	<h3 class="text-center">Welcome back, login into your casa account.</h3>
+	<h3 class="text-center">Let's help you recover your account</h3>
 </div>
 			<form class="" role="form" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+				
 					<div class="form-group">
-						<input type="text" name="email" class="form-control">
-
+			     	<input type="password" class="form-control" autofocus name="password" placeholder="New Password" required>
 					</div>
-
-
-
+					
+					<div class="form-group">
+					<input type="password" name="password-confirm" class="form-control" placeholder="Confirm Password"/>
+            		</div>
 
 					<div class="form-group">
-						<input type="password" name="password" class="form-control">
-					</div>
-
-
-					<div class="form-group">
-						<button class="btn btn-primary btn-block"><i class="fa fa-sign-in"></i> Login</button>
+						<button class="btn btn-primary btn-block"><i class="fa fa-save"></i>&nbsp;Save</button>
 					</div>
 
 					<p><ul class="list-inline text-center">
 						<li>	<a href="register"><i class="fa fa-sign-in"></i>&nbsp;Open Account</a></li>
-						<li><a href="recover"><i class="fa fa-question"></i>&nbsp;Lost Password</a></li>
+						<li><a href="login"><i class="fa fa-sign-in"></i>&nbsp;Login</a></li>
 						<li><a href="index"><i class="fa fa-home"></i>&nbsp;Front Door</a></li></ul>
 				</p>
 		</form>

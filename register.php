@@ -46,7 +46,7 @@
 					<div class="form-group col-md-12">
 					<p><ul class="list-inline text-center">
 						<li>	<a href="login"><a href="login"><i class="fa fa-sign-in"></i>&nbsp;Log In?</a></li>
-						<li><a href=""><i class="fa fa-question"></i>&nbsp;Lost Password</a></li>
+						<li><a href="recover"><i class="fa fa-question"></i>&nbsp;Lost Password</a></li>
 						<li><a href="index"><i class="fa fa-home"></i>&nbsp;Front Door</a></li></ul>
 					</p>
 					</div>
