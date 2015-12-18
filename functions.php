@@ -280,6 +280,10 @@ if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
 
 }
 
+if($target_path==="uploads/"){
+  $target_path="images/no-thumb.png";
+}
+
   $query="select * from properties where email='$email'";
   $result=mysqli_query($dbc,$query);
   $row=mysqli_num_rows($result);
