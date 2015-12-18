@@ -14,16 +14,21 @@
 
 		<div class="col-md-4">
 			<ul class="list-inline">
-				<li><a href="">About</a></li>
+				<li><a href="about">About</a></li>
 				<li><a href="">Terms & Conditions</a></li>
-				<li><a href="">Contact</a></li>
-				<li><a href="">Properties</a></li>
+				<li><a href="">We <i class="fa fa-heart"></i>&nbsp;Feedback</a></li>
+			
 
 			</ul>
 
 		</div>
 
-		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<ul class="list-inline">
+			<li><a href="mailto:info@casaghana.com"><i class="fa fa-envelope"></i>&nbsp;info@casaghana.com</a> </li>
+			<li> <i class="fa fa-phone"></i>&nbsp; 054 092 0984</li>
+			</ul>
+		</div>
 	</div>
 </div>
 

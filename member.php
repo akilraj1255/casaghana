@@ -2,7 +2,7 @@
 <?php if(!isset($user)){
   header("location:login");
 } ?>
-<?php user_update() ;?>
+<?php user_update();?>
 <div class="container">
 
 
@@ -35,7 +35,7 @@
 
 
             <div class="form-group">
-              <a type="submit" name="button" class=" btn-primary btn btn-block"><i class="fa fa-save"></i>&nbsp;Update</a>
+              <button type="submit" name="button" class=" btn-primary btn btn-block"><i class="fa fa-save"></i>&nbsp;Update</button>
             </div>
       </form>
     </div>

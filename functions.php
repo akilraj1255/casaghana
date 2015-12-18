@@ -521,6 +521,7 @@ function user_update(){
 
         if($result && $result2){
           echo '<p class="alert alert-success text-center">Your profile has been updated <span class="close pull-right"> <span class="close pull-right"> <a href="#" >&times; </a></span></p>';
+          header("refresh:2,member");
 
         }else{
           echo '<p class="alert alert-danger">My bad!!! Something went totally wrong. Try again later while i try to fix it <span class="close pull-right"> <span class="close pull-right"> <a href="#" >&times; </a></span></p>';
