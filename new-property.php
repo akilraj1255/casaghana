@@ -20,7 +20,7 @@
       <form class="form-horizontal property-single" style="padding:7%" role="form" action="<?php $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data" method="post">
             <div class="form-group">
               <label for="name">Posting As?</label>
-              <input type="text" name="name" value="<?php echo $row['first_name'] ?>" placeholder="Posting As?" class="form-control">
+              <input type="text" name="name" value="<?php echo $row['first_name'] ?>" placeholder="Posting As?" class="form-control" required>
             </div>
             <div class="form-group">
               <label for="email"> Email</label>
@@ -32,12 +32,12 @@
             </div>
             <div class="form-group">
               <label for="title">Name  Listing</label>
-              <input type="text" name="title" value="" placeholder="Give me a title" class="form-control">
+              <input type="text" name="title" value="" placeholder="Give me a title" class="form-control" required>
             </div>
 
             <div class="form-group">
               <label for="action">Property Status</label>
-              <select name="status" class="form-control">
+              <select name="status" class="form-control" required>
               <option select="" value="">Rent / Sale or Share</option>
             <?php
 
@@ -54,7 +54,7 @@
 
             <div class="form-group">
               <label for="location"> Property Location</label>
-              <select name="location" class="form-control">
+              <select name="location" class="form-control" required>
               <option select="" value="">Your Property Location</option>
             <?php
 
@@ -71,7 +71,7 @@
 
             <div class="form-group">
               <label for="type"> Property Type</label>
-              <select name="type" class="form-control">
+              <select name="type" class="form-control" required>
               <option select="" value="">Your Property Type</option>
             <?php
 
@@ -89,7 +89,7 @@
 
             <div class="form-group">
               <label for="price">Property Value</label>
-              <input type="text" name="price" value="" placeholder="From $" class="form-control">
+              <input type="text" name="price" value="" placeholder="From $" class="form-control" required>
             </div>
 
             <div class="form-group">
@@ -100,7 +100,7 @@
 
             <div class="form-group">
               <label for="description">Give some details</label>
-              <textarea name="description" rows="8" cols="40" class="form-control"></textarea>
+              <textarea name="description" rows="8" cols="40" class="form-control" required></textarea>
             </div>
 
             <div class="form-group">

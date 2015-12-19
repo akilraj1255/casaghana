@@ -15,7 +15,7 @@
 		<div class="col-md-4">
 			<ul class="list-inline">
 				<li><a href="about">About</a></li>
-				<li><a href="">Terms & Conditions</a></li>
+				<li><a href="terms">Terms & Conditions</a></li>
 				<li><a href="">We <i class="fa fa-heart"></i>&nbsp;Feedback</a></li>
 			
 

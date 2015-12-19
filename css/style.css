@@ -176,6 +176,9 @@ label{
 	font-weight: bold;
 	clear: both;
 	overflow: hidden;
+	position:relative;
+	margin-top:11%;
+
 }
 
 .footer a{

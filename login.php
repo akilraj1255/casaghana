@@ -25,7 +25,7 @@
 </div>
 			<form class="" role="form" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 					<div class="form-group">
-						<input type="text" name="email" class="form-control">
+						<input type="text" name="email" required class="form-control">
 
 					</div>
 
@@ -33,7 +33,7 @@
 
 
 					<div class="form-group">
-						<input type="password" name="password" class="form-control">
+						<input type="password" name="password" required class="form-control">
 					</div>
 
 
