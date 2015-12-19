@@ -16,7 +16,7 @@
 			<ul class="list-inline">
 				<li><a href="about">About</a></li>
 				<li><a href="terms">Terms & Conditions</a></li>
-				<li><a href="">We <i class="fa fa-heart"></i>&nbsp;Feedback</a></li>
+				<li><a href="">We <i class="fa fa-heart" style="color:#ee3853"></i>&nbsp;Feedback</a></li>
 			
 
 			</ul>
@@ -25,8 +25,8 @@
 
 		<div class="col-md-4">
 			<ul class="list-inline">
-			<li><a href="mailto:info@casaghana.com"><i class="fa fa-envelope"></i>&nbsp;info@casaghana.com</a> </li>
-			<li> <i class="fa fa-phone"></i>&nbsp; 054 092 0984</li>
+			<li><a href="mailto:info@casaghana.com"><i class="fa fa-envelope" style="color:#ee3853"></i>&nbsp;info@casaghana.com</a> </li>
+			<li> <i class="fa fa-phone" style="color:#ee3853"></i>&nbsp;054 092 0984</li>
 			</ul>
 		</div>
 	</div>

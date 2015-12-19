@@ -66,6 +66,8 @@ body{
 .navbar{
 	font-family: helvetica,arial,sans-serif;
 	background: #927499;
+	width: 100%;
+	border-radius:0;
 }
 
 .navbar a{
@@ -181,12 +183,16 @@ label{
 
 }
 
-.footer a{
+.footer a, .header-link {
 	color: #fafafa;
 
 }
 
-.footer a:hover{
+.notice .btn a:hover{
+	color: 
+}
+
+.footer a:hover , .header-link:hover{
 	color: #ee3853;
 	text-decoration: none;
 }

@@ -11,7 +11,11 @@
 	</head>
 <body>
 	<div class="row notice text-center">
-    Welcome to Casa Ghana Beta!! Rent, Buy , Sale or Share your properties. <a href="new-property" class="btn call-btn">List Yours</a>
+    <p class="hidden-xs">Welcome to Casa Ghana Beta!! Rent, Buy , Sale or Share your properties. <a href="new-property" class="btn call-btn">List Yours</a></p>
+		<ul class="list-inline ">
+			<li><a href="mailto:info@casaghana.com" class="header-link"><i class="fa fa-envelope" style="color:#ee3853"></i>&nbsp;info@casaghana.com</a> </li>
+			<li> <i class="fa fa-phone" style="color:#ee3853"></i>&nbsp;054 092 0984</li>
+			</ul>
 	</div>
 <?php include('functions.php');
 	casa_setup();
