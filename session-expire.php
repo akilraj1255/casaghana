@@ -15,18 +15,7 @@ $_SESSION=array();
 <?php if(isset($user)) :?>
 
  <script>
-i = 1;
-  // set the initial value
-var timer = function onTimer() {
-  i++;
-  if (i === 300000) {
-    alert('Your time has expired!');
-  }
-  else {
-    setTimeout(onTimer);
-  }
-}
-  timer();
+<?php include 'js/shortTimer.js'; ?>
 </script>
 
 
