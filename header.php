@@ -26,6 +26,8 @@
 				member();
 			logout_modal();
 
+			
+
 	?>
 	<div class="navbar">
 		<div class="container-fluid">
