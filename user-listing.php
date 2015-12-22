@@ -13,11 +13,11 @@
    </div>
 
 
-   <div class="col-md-offset-3 col-md-6  property-single">
+   <div class="col-md-offset-3 col-md-6  ">
       <?php user_listings(); ?>
   </div>
 
-</div>
+</div></div>
 
 
 <?php include 'footer.php' ?>
