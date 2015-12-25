@@ -1,11 +1,10 @@
 <?php
-$dbc= mysqli_connect('localhost','root','lollypop28','casa');
-
-
+/* connect database test */
+@$dbc = mysqli_connect("localhost", "iamkarsoftdb", "lollypop28", "idamu_db");
 
 /* check connection */
-if (mysqli_connect_errno()) {
-  echo $dbc= mysqli_connect('localhost','iamkarsoftdb','lollypop28','idamu_db');
+if (!$dbc) {
+@$dbc = mysqli_connect("localhost", "root", "lollypop28", "casa");
 
 }
 
