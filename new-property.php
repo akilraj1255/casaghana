@@ -59,11 +59,11 @@
             <?php
 
 
-                                    $query="select * from locations order by location_name ASC";
+                                    $query="select * from locations order by region ASC";
                                       $result=mysqli_query($dbc,$query);
 
                                         while($location=mysqli_fetch_array($result)){
-                              $location=$location['location_name'];
+                              $location=$location['region'];
                           echo '<option  >'."$location".'</option>';}
                       ?>
               </select>

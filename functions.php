@@ -18,7 +18,7 @@ include 'dbconnect.php';
 
 
 
-$users="CREATE TABLE IF NOT EXISTS `users` (
+$users= "CREATE TABLE IF NOT EXISTS `users` (
   `confirm_code` varchar(64) NOT NULL,
   `delete_code` varchar(64) NOT NULL,
   `active` int(1) NOT NULL DEFAULT '0',
@@ -33,6 +33,8 @@ $users="CREATE TABLE IF NOT EXISTS `users` (
   `user_type` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`email`)
 ) ";
+
+$userresult=mysqli_query($dbc,$users);
 
 $properties="create table if not exists `properties`(
    `property_id` varchar(64) NOT NULL,
@@ -53,19 +55,35 @@ $properties="create table if not exists `properties`(
    PRIMARY KEY (`email`)
 )";
 
+ 
+   $propresult=mysqli_query($dbc,$properties);
+
 $locations="create table if not exists `locations`(
-    `location_id` varchar(256) not null,
-    `location_name` varchar(256) not null,
     `region` varchar(256)  null,
-    `state` varchar(256)  null,
-      PRIMARY KEY (`location_id`)
+      PRIMARY KEY (`region`)
 )";
+
+ $locationresult=mysqli_query($dbc,$locations);
+
+$checklocations="select * from locations";
+$checkloc=mysqli_query($dbc,$checklocations);
+$check_locresult=mysqli_num_rows($checkloc);
+
+if($check_locresult==0){
+
+  $insertlocation="insert into locations values('Ashanti'),('Brong Ahafo'),('Central'),('Eastern'),('Greater Accra'),('Nothern'),
+  ('Upper East'),('Upper West'),('Volta'),('Western')";
+  $insertloc=mysqli_query($dbc,$insertlocation);
+
+}
 
 $proptype="create table if not exists `property_type`(
 
 `type_name` varchar(256) not null,
   PRIMARY KEY (`type_name`)
 )";
+
+ $typeresult=mysqli_query($dbc,$proptype);
 
 $property_id=md5(rand(0,10000));
 $insertCheck="select * from property_type";
@@ -83,6 +101,8 @@ $status="create table if not exists `property_status`(
   PRIMARY KEY (`status_name`)
 )";
 
+    $statusresult=mysqli_query($dbc,$status);
+
 
 $statusCheck="select * from property_status";
 $checkstatus=mysqli_query($dbc,$statusCheck);
@@ -94,11 +114,9 @@ $insertstatus= "insert into property_status  values('rent'),('lease'),
 };
 
 
-	 $userresult=mysqli_query($dbc,$users);
-   $propresult=mysqli_query($dbc,$properties);
-   $typeresult=mysqli_query($dbc,$proptype);
-   $locationresult=mysqli_query($dbc,$locations);
-    $statusresult=mysqli_query($dbc,$status);
+	
+  
+  
 
 };
 
