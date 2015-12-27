@@ -86,6 +86,20 @@
               </select>
             </div>
 
+             <div class="form-group">
+               <div class=" col-md-12">
+                  <div class="col-md-6">
+                  <label for="bedroom">Bedrooms</label>
+                  <input type="text" name="bedroom" value="" placeholder=" i.e 2 for 2 Bedrooms" class="form-control" required>
+                  </div>  
+
+                  <div class="col-md-6">
+                  <label for="gsize">Garage size</label>
+                  <input type="text" name="gsize" value="" placeholder=" i.e 2 for 2 cars" class="form-control" required>
+                  </div>
+                </div>
+            </div>
+
 
             <div class="form-group">
               <label for="price">Property Value</label>

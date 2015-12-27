@@ -289,6 +289,8 @@ function new_listing(){
   $location=mysqli_escape_string($dbc,$_POST['location']);
   $price=mysqli_escape_string($dbc,$_POST['price']);
     $type=mysqli_escape_string($dbc,$_POST['type']);
+     $bedroom=mysqli_escape_string($dbc,$_POST['bedroom']);
+    $gsize=mysqli_escape_string($dbc,$_POST['gsize']);
   $description=mysqli_escape_string($dbc,$_POST['description']);
     $status=mysqli_escape_string($dbc,$_POST['status']);
   $listid=uniqid(rand(0,10000));
@@ -307,8 +309,8 @@ if($target_path==="uploads/"){
   $row=mysqli_num_rows($result);
   if($row!=1){
     $query="insert into properties(owner,email,contact,title,location,
-    price,description,property_id,status,images,property_type) values('$name','$email','$contact',
-    '$title','$location','$price','$description','$listid','$status','$target_path','$type')";
+    price,description,property_id,status,images,property_type,bedrooms,gsize) values('$name','$email','$contact',
+    '$title','$location','$price','$description','$listid','$status','$target_path','$type','$bedroom','$gsize')";
 
     $result=mysqli_query($dbc,$query);
 
