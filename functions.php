@@ -780,7 +780,7 @@ if($rows==0){
 }else{
   while($row=mysqli_fetch_array($result)){
 
-  echo '  <li class=""> <i class="fa fa-chevron-circle-right"></i>&nbsp;<a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></li>';
+  echo '  <li class="links"> <i class="fa fa-chevron-circle-right"></i>&nbsp;<a href="view-listing?listing='.$row['property_id'].'">'.$row['title'].'</a></li>';
 }
 }
 }

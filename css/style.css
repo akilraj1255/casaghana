@@ -187,6 +187,13 @@ label{
 	font-weight: bold;
 }
 
+.links a, .links i{
+	font-size: large;
+}
+.links a:hover{
+	color: #ee3853;
+	text-decoration: none;
+}
 .footer{
 	padding:4%;
 	background: #38424b;
