@@ -196,8 +196,8 @@ function newMember(){
 
        //sending the mail
        $sentmail=mail($to,$subject,$message,$header);
-       echo '<p class="alert alert-success center-block"> Your Account is ready.Please Click the confirmation link we sent you and
-  Just <span class="link"><a href="signin" >Sign In</a></span> <span class="close pull-right"> <a href="#"> X </a></span></p>';
+       echo '<p class="alert alert-success text-center"> Your Account is ready.Please Click the confirmation link we sent you and
+  Just <span class="link"><a href="login" >Sign In</a></span> <span class="close pull-right"> <a href="#"> X </a></span></p>';
 
 }else{echo '<p class="alert alert-danger text-center">Something is not right <span class="pull-right close"> <a href="#" >&times;</a></span></p>';}
 
@@ -849,7 +849,7 @@ function reset_pass(){
       $query="update users SET password='$password' where user_id='$userid'";
       $result=mysqli_query($dbc,$query);
 
-      echo '<p class="alert text-center alert-success">Your new password has been saved. kindly <a href="signin">Login</a> <span class="close pull-right"> <a href="#"> X </span></p>';
+      echo '<p class="alert text-center alert-success">Your new password has been saved. kindly <a href="login">Login</a> <span class="close pull-right"> <a href="#"> X </span></p>';
     }
   }
 

@@ -12,6 +12,10 @@ height: auto;
 
 }
 
+a{
+	color:#ee3853;
+}
+
 .jumbotron{
 		 background: url('../images/hero.jpg') no-repeat bottom center;
     background-size: cover;
@@ -71,7 +75,7 @@ body,html{
 
 .clearfooter{
 
-	height: 130px;
+	height: 30px;
 clear: both;
 }
 
@@ -192,7 +196,7 @@ label{
 	position: relative;
 	clear: both;
 	overflow: hidden;
-	margin-top:11%;
+	margin-top:3%;
 
 z-index:999999;
 
