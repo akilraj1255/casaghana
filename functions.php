@@ -834,6 +834,8 @@ echo '<p class="alert alert-success text-center"> We\'ve sent you a message, ple
 function reset_pass(){
 
   if($_POST){
+    include 'dbconnect.php';
+
       $userid=$_GET['userid'];
 
     $password=mysqli_escape_string($dbc,md5(md5($_POST['password'])));
