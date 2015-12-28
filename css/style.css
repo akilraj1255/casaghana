@@ -6,6 +6,10 @@ background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+height: auto;
+  min-height: 100%;
+
+
 }
 
 .jumbotron{
@@ -52,15 +56,23 @@ li{
 }
 
 
-body{
+body,html{
 	font-family:helvetica,arial,sans-serif;
 	background: #d2d9e2;
 	overflow-x: hidden;
+	height: 100%;
+
 }
 .property-listing{
 	margin-bottom: 15%;
 
 
+}
+
+.clearfooter{
+
+	height: 130px;
+clear: both;
 }
 
 .navbar{
@@ -175,11 +187,14 @@ label{
 	padding:4%;
 	background: #38424b;
 	color: #fafafa;
+		height: 130px;
 	font-weight: bold;
+	position: relative;
 	clear: both;
 	overflow: hidden;
-	position:relative;
 	margin-top:11%;
+
+z-index:999999;
 
 }
 

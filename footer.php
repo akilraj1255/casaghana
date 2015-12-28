@@ -6,6 +6,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script  src="js/custom.js"></script>
 <!-- adding lightbox to project -->
+<div class="clearfooter"></div>
 <div class="footer row">
 	<div class="col-md-12">
 		<div class="col-md-4">
