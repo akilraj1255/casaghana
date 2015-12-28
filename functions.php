@@ -192,7 +192,7 @@ function newMember(){
        ";
 
        $message.="click on this link to activate your account\r\n";
-       $message.="http://www.casaghana.com/confirmation?passkey=$confirm_code";
+       $message.="http://www.casaghana.kofi.work/confirmation?passkey=$confirm_code";
 
        //sending the mail
        $sentmail=mail($to,$subject,$message,$header);
@@ -316,9 +316,9 @@ if($target_path==="uploads/"){
 
     $result=mysqli_query($dbc,$query);
 
-    echo '<p class="bg-success">Property Listing Successful</p>';
+    echo '<p class="bg-success alert alert-success text-center">Property Listing Successful</p>';
   }else{
-    echo '<p class="bg-danger">My bad!!! Something went totally wrong. Try again later while i try to fix it <span class="close pull-right"> <span class="close pull-right"> <a href="#" >&times; </a></span></p>';
+    echo '<p class="bg-danger alert-danger">My bad!!! Something went totally wrong. Try again later while i try to fix it <span class="close pull-right"> <span class="close pull-right"> <a href="#" >&times; </a></span></p>';
   }
 }
 
@@ -819,14 +819,14 @@ include 'dbconnect.php';
       //My Message
       $message="Please follow this link  \r\n";
       $message.="click on this link to set a new password for  your account\r\n";
-      $message.="http://www.casaghana.com/new-password?userid=$userid";
+      $message.="http://www.casaghana.kofi.work/new-password?userid=$userid";
 
       //sending the mail
       $sentmail=mail($to,$subject,$message,$header);
 
     };
 
-echo '<p class="alert alert-success"> We\'ve sent you a message, please click on the link in your email to set your new password</p>';}else{echo '<p class="alert alert-danger text-center">Something is not right</p>';}
+echo '<p class="alert alert-success text-center"> We\'ve sent you a message, please click on the link in your email to set your new password</p>';}else{echo '<p class="alert alert-danger text-center">Something is not right</p>';}
 
 }};
 
@@ -852,6 +852,27 @@ function reset_pass(){
       echo '<p class="alert text-center alert-success">Your new password has been saved. kindly <a href="login">Login</a> <span class="close pull-right"> <a href="#"> X </span></p>';
     }
   }
+
+}
+
+
+//confirmation
+function confirmation(){
+  include 'dbconnect.php';
+    $passkey=$_GET['passkey'];
+
+    $query="select * from users where confirm_code='$passkey'";
+    $result=mysqli_query($dbc,$query);
+
+    if($result){
+      $query="Update users SET active=1 where confirm_code='$passkey'";
+      $result=mysqli_query($dbc,$query);
+
+      echo'<p class="alert alert-success text-center">You\'ve Successfully Confirmed your account, Please <a href="login">Sign In </a> To continue <span class="close pull-right"> <a href="#"> X </span></p>';
+    }else{
+
+      echo '<p class="alert alert-danger text-center">Invalid Confirmation of account <span class="close pull-right"> <a href="#"> X </span></p>';
+    }
 
 }
 
