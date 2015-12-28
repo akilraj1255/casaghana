@@ -262,6 +262,8 @@ function logout_modal(){
 <?php
 
 }
+//
+
 
 //function for sidebar properties
 function property_type(){
@@ -355,8 +357,8 @@ echo'
                <li>
                  <ul class="list-inline">
                    <li class=""><i class="fa fa-home"></i><a href="#"> Size</a></li>
-                   <li class=""><i class="fa fa-automobile"></i><a href="#"> Garage size</a></li>
-                   <li class=""><i class="fa fa-bed"></i><a href="#"> 2 Bedrooms</a></li>
+                   <li class=""><i class="fa fa-automobile"></i><a href="#">'.$row['gsize'].'&nbsp; Cars</a></li>
+                   <li class=""><i class="fa fa-bed"></i><a href="#"> &nbsp;'.$row['bedrooms'].'&nbsp; Bedroom(s)</a></li>
                  </ul>
 
                  <ul class="list-inline">
@@ -468,8 +470,8 @@ echo
                <li>
                  <ul class="list-inline">
                    <li class=""><i class="fa fa-home"></i><a href="#"> Size</a></li>
-                   <li class=""><i class="fa fa-automobile"></i><a href="#"> Garage size</a></li>
-                   <li class=""><i class="fa fa-bed"></i><a href="#"> 2 Bedrooms</a></li>
+                   <li class=""><i class="fa fa-automobile"></i><a href="#"> '.$row['gsize'].'&nbsp; Cars</a></li>
+                   <li class=""><i class="fa fa-bed"></i><a href="#">&nbsp;&nbsp;'.$row['bedrooms'].'&nbsp; Bedroom(s)</a></li>
                  </ul>
 
                  <ul class="list-inline">
@@ -599,8 +601,8 @@ function specificClassify(){
                  <li>
                    <ul class="list-inline">
                      <li class=""><i class="fa fa-home"></i><a href="#"> Size</a></li>
-                     <li class=""><i class="fa fa-automobile"></i><a href="#"> Garage size</a></li>
-                     <li class=""><i class="fa fa-bed"></i><a href="#"> 2 Bedrooms</a></li>
+                     <li class=""><i class="fa fa-automobile"></i><a href="#"> '.$row['gsize'].'&nbsp; Cars</a></li>
+                     <li class=""><i class="fa fa-bed"></i><a href="#">&nbsp;&nbsp;'.$row['bedrooms'].'&nbsp; Bedroom(s)</a></li>
                    </ul>
 
                    <ul class="list-inline">
@@ -709,8 +711,8 @@ echo
                <li>
                  <ul class="list-inline">
                    <li class=""><i class="fa fa-home"></i><a href="#"> Size</a></li>
-                   <li class=""><i class="fa fa-automobile"></i><a href="#"> Garage size</a></li>
-                   <li class=""><i class="fa fa-bed"></i><a href="#"> 2 Bedrooms</a></li>
+                   <li class=""><i class="fa fa-automobile"></i><a href="#">'.$row['gsize'].'&nbsp; Cars</a></li>
+                   <li class=""><i class="fa fa-bed"></i><a href="#">&nbsp;&nbsp;'.$row['bedrooms'].'&nbsp; Bedroom(s)</a></li>
                  </ul>
 
                  <ul class="list-inline">
@@ -852,3 +854,4 @@ function reset_pass(){
   }
 
 }
+
