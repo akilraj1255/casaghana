@@ -34,7 +34,7 @@
             		</div>
 
 					<div class="form-group">
-						<button class="btn btn-primary btn-block"><i class="fa fa-save"></i>&nbsp;Save</button>
+						<button class="btn btn-primary btn-block" type="submit"><i class="fa fa-save"></i>&nbsp;Save</button>
 					</div>
 
 					<p><ul class="list-inline text-center">
