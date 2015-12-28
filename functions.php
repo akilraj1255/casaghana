@@ -192,7 +192,7 @@ function newMember(){
        ";
 
        $message.="click on this link to activate your account\r\n";
-       $message.="http://www.casaghana.kofi.work/confirmation?passkey=$confirm_code";
+       $message.="http://casaghana.kofi.work/confirmation?passkey=$confirm_code";
 
        //sending the mail
        $sentmail=mail($to,$subject,$message,$header);
@@ -814,12 +814,12 @@ include 'dbconnect.php';
 
 
       //from
-      $header="From: idamou.com";
+      $header="From: casaghana.com";
 
       //My Message
       $message="Please follow this link  \r\n";
       $message.="click on this link to set a new password for  your account\r\n";
-      $message.="http://www.casaghana.kofi.work/new-password?userid=$userid";
+      $message.="http://casaghana.kofi.work/new-password?userid=$userid";
 
       //sending the mail
       $sentmail=mail($to,$subject,$message,$header);
